@@ -6,9 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
-
 import android.widget.Toast;
 
 import com.zkteco.android.biometric.core.device.ParameterHelper;
@@ -24,8 +24,9 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 public class SignFingerUtils {
+    public static final String TAG ="SignFingerUtils";
     private static final int VID = 6997;    //zkteco device VID  6997
-    private static final int PID = 1023;    //NIDFPSensor PID 根据实际设置
+    private static final int PID = 772;    //NIDFPSensor PID 根据实际设置
     //测试模板，二代证采集的1024字节有2个模板
     private byte[] mTestFeature = new byte[512];
     //测试模板Base64字符串
@@ -62,8 +63,9 @@ public class SignFingerUtils {
     };
 
     private static SignFingerUtils mInstance;
-    public  static SignFingerUtils getInstance(){
-        if(mInstance == null)
+
+    public static SignFingerUtils getInstance() {
+        if (mInstance == null)
             mInstance = new SignFingerUtils();
         return mInstance;
     }
@@ -114,29 +116,38 @@ public class SignFingerUtils {
         public void run() {
             super.run();
             mbStop = false;
-            while (!mbStop && openFingDialog) {
-                try {
-                    Thread.sleep(150);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    mNIDFPSensor.GetFPRawData(0, mBufImage);
-                } catch (NIDFPException e) {
-                    e.printStackTrace();
-                    continue;
-                }
-                byte[] retQualityScore = new byte[1];
-                int ret = mNIDFPSensor.getQualityScore(mBufImage, retQualityScore);
-                final byte qualityScore = retQualityScore[0];
-                if (1 != ret || qualityScore < 75) {
-                    continue;
-                }
+            while (!mbStop) {
+                synchronized (WorkThread.class) {
+                    try {
+                        if (!openFingDialog) {
+                            WorkThread.class.wait();
+                        }
+                    } catch (Exception e) {
+//
+                    }
 
-                if(bitmapCreateListener != null){
-                    Bitmap bitmap = ToolUtils.renderCroppedGreyScaleBitmap(mBufImage, mNIDFPSensor.getFpImgWidth(), mNIDFPSensor.getFpImgHeight());
-                    bitmapCreateListener.bitmapCreated(bitmap);
-                }
+                    try {
+                        Thread.sleep(150);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    try {
+                        mNIDFPSensor.GetFPRawData(0, mBufImage);
+                    } catch (NIDFPException e) {
+                        e.printStackTrace();
+                        continue;
+                    }
+                    byte[] retQualityScore = new byte[1];
+                    int ret = mNIDFPSensor.getQualityScore(mBufImage, retQualityScore);
+                    final byte qualityScore = retQualityScore[0];
+                    if (1 != ret || qualityScore < 75) {
+                        continue;
+                    }
+
+                    if (bitmapCreateListener != null) {
+                        Bitmap bitmap = renderCroppedGreyScaleBitmap(mBufImage, mNIDFPSensor.getFpImgWidth(), mNIDFPSensor.getFpImgHeight());
+                        bitmapCreateListener.bitmapCreated(bitmap);
+                    }
 //                Activity.runOnUiThread(new Runnable() {
 //                    public void run() {
 //                        Bitmap bitmap = ToolUtils.renderCroppedGreyScaleBitmap(mBufImage, mNIDFPSensor.getFpImgWidth(), mNIDFPSensor.getFpImgHeight());
@@ -145,12 +156,13 @@ public class SignFingerUtils {
 //                    }
 //                });
 
-                final float score = mNIDFPSensor.ImageMatch(0, mBufImage, mTestFeature);
+                    final float score = mNIDFPSensor.ImageMatch(0, mBufImage, mTestFeature);
 //                runOnUiThread(new Runnable() {
 //                    public void run() {
 //                        mTxtReport.setText("score:" + score);
 //                    }
 //                });
+                }
             }
             countdownLatch.countDown();
             //Toast.makeText(mContext, "线程退出", Toast.LENGTH_SHORT).show();
@@ -158,16 +170,22 @@ public class SignFingerUtils {
     }
 
 
-    public boolean openFingDialog = false;
+    public volatile boolean openFingDialog = false;
 
-    public void startFinger(){
+    public void startFinger() {
         openFingDialog = true;
-        if(mWorkThread != null)
-            mWorkThread.notify();
+        synchronized (WorkThread.class) {
+            if (mWorkThread != null)
+                WorkThread.class.notifyAll();
+        }
     }
 
-    public void pauseFinger(){
+    public void pauseFinger() {
         openFingDialog = false;
+//        try {
+//            if (mWorkThread != null)
+//                mWorkThread.interrupt();
+//        }catch (Exception e){}
     }
 
     private void openDevice() {
@@ -197,7 +215,7 @@ public class SignFingerUtils {
             mbStart = true;
         } catch (NIDFPException e) {
             e.printStackTrace();
-            Toast.makeText(mContext, "Open device fail.errorcode:\"+ e.getErrorCode() + \"err message:\" + e.getMessage() + \"inner code:\" + e.getInternalErrorCode()", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "Open device fail.errorcode:" + e.getErrorCode() + "err message:" + e.getMessage() + "inner code:" + e.getInternalErrorCode(), Toast.LENGTH_SHORT).show();
             //mTxtReport.setText("Open device fail.errorcode:"+ e.getErrorCode() + "err message:" + e.getMessage() + "inner code:" + e.getInternalErrorCode());
         }
     }
@@ -235,29 +253,61 @@ public class SignFingerUtils {
 
     public void CloseDevice() {
         if (mbStart) {
+            pauseFinger();
             mbStop = true;  //停止采集线程
             try {
                 //等待线程退出，10S
-                countdownLatch.await(10 * 1000, TimeUnit.SECONDS);
+                countdownLatch.await(3 * 1000, TimeUnit.SECONDS);
                 mWorkThread.interrupt();
+                mContext.unregisterReceiver(mUsbReceiver);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            mWorkThread = null;
             try {
                 mNIDFPSensor.close(0);  //关闭设备
             } catch (NIDFPException e) {
                 e.printStackTrace();
             }
+            NIDFPFactory.destroy(mNIDFPSensor);
         }
         mbStart = false;
     }
+
     BitmapCreateListener bitmapCreateListener;
 
     public void setBitmapCreateListener(BitmapCreateListener bitmapCreateListener) {
         this.bitmapCreateListener = bitmapCreateListener;
     }
 
-    public interface BitmapCreateListener{
+    public interface BitmapCreateListener {
         void bitmapCreated(Bitmap bitmap);
+    }
+
+    public  Bitmap renderCroppedGreyScaleBitmap(byte[] buffer, int width, int height) {
+        if (buffer != null && buffer.length != 0) {
+            int[] pixels = new int[width * height];
+            int inputOffset = 0;
+
+            for(int y = 0; y < height; ++y) {
+                int outputOffset = y * width;
+
+                for(int x = 0; x < width; ++x) {
+                    int grey = buffer[inputOffset + x] & 255;
+//                    pixels[outputOffset + x] = -16777216 | grey * 65793;
+                    pixels[outputOffset + x] = Color.RED | grey * 65793;
+                }
+
+                inputOffset += width;
+            }
+
+            Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
+            bitmap.setPixels(pixels, 0, width, 0, 0, width, height);
+            buffer = null;
+            pixels = null;
+            return bitmap;
+        } else {
+            return null;
+        }
     }
 }

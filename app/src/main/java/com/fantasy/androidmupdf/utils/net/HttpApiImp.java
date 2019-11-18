@@ -1,12 +1,11 @@
 package com.fantasy.androidmupdf.utils.net;
 
-import android.os.Environment;
 import android.util.Log;
 
 import com.artifex.mupdf.viewer.Logger;
-import com.fantasy.androidmupdf.FileUtils;
 import com.fantasy.androidmupdf.model.BaseEnty;
 import com.fantasy.androidmupdf.model.DocumentInfo;
+import com.fantasy.androidmupdf.model.SignInfo;
 import com.fantasy.androidmupdf.model.UserInfo;
 import com.fantasy.androidmupdf.utils.LogUtils;
 import com.fantasy.androidmupdf.utils.RetrofitManager;
@@ -22,10 +21,12 @@ import java.io.OutputStream;
 import java.util.List;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -38,11 +39,11 @@ import static com.fantasy.androidmupdf.utils.LogUtils.TAG;
 public class HttpApiImp {
 
     public interface NetResponse<T> {
-      void onError(final Throwable e);
+        void onError(final Throwable e);
 
-      void onSuccess(T model);
+        void onSuccess(T model);
 
-      void onProgress(int progress);
+        void onProgress(int progress);
     }
 
     private static Observer<BaseEnty> createResponse(final NetResponse netResponse) {
@@ -133,34 +134,53 @@ public class HttpApiImp {
 //            jsonObject.put("documentUrl", downloadUrl + "");
 //            RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), jsonObject.toString());
             Observable<ResponseBody> observable = RetrofitManager.getInstance().getService().downloadPdfFile(downloadUrl);
-            observable.subscribeOn(Schedulers.io()).subscribe(new Observer<ResponseBody>() {
+            observable.subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).flatMap(new Function<ResponseBody, ObservableSource<String>>() {
                 @Override
-                public void onSubscribe(Disposable d) {
-
+                public ObservableSource<String> apply(ResponseBody responseBody) throws Exception {
+                     writeFileSDcard(responseBody, new File(name));
+                    return Observable.just(name);
                 }
-
+            }).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<String>() {
                 @Override
-                public void onNext(ResponseBody value) {
-                    writeFileSDcard(value, new File(name), netResponse);
-                    Log.d(TAG, "onNext");
+                public void accept(String body) throws Exception {
+                    if(netResponse != null)
+                        netResponse.onSuccess(body);
                 }
-
+            }, new Consumer<Throwable>() {
                 @Override
-                public void onError(Throwable e) {
-                    LogUtils.d("onError..." +e.getMessage());
-                }
-
-                @Override
-                public void onComplete() {
-                    Log.d(TAG, "onComplete");
+                public void accept(Throwable throwable) throws Exception {
+                    if(netResponse != null)
+                        netResponse.onError(throwable);
                 }
             });
+//            observable.subscribeOn(Schedulers.io()).subscribe(new Observer<ResponseBody>() {
+//                @Override
+//                public void onSubscribe(Disposable d) {
+//
+//                }
+//
+//                @Override
+//                public void onNext(ResponseBody value) {
+//                    writeFileSDcard(value, new File(name));
+//                    Log.d(TAG, "onNext");
+//                }
+//
+//                @Override
+//                public void onError(Throwable e) {
+//                    LogUtils.d("onError..." + e.getMessage());
+//                }
+//
+//                @Override
+//                public void onComplete() {
+//                    Log.d(TAG, "onComplete");
+//                }
+//            });
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private static void writeFileSDcard(ResponseBody responseBody, File mFile, NetResponse downloadListener) {
+    private static String writeFileSDcard(ResponseBody responseBody, File mFile) {
         Log.d(TAG, "writeFileSDcard");
         long currentLength = 0;
         OutputStream os = null;
@@ -177,16 +197,16 @@ public class HttpApiImp {
                 Log.d(TAG, "当前长度: " + totalLength);
                 int progress = (int) (100 * currentLength / totalLength);
                 Log.d(TAG, "当前进度: " + progress);
-                downloadListener.onProgress(progress);
+//                downloadListener.onProgress(progress);
             }
-            downloadListener.onSuccess(mFile.getAbsolutePath());
+//            downloadListener.onSuccess(mFile.getAbsolutePath());
         } catch (FileNotFoundException e) {
             Log.d(TAG, "Exception=" + e.getMessage());
-            downloadListener.onError(e);
+//            downloadListener.onError(e);
             e.printStackTrace();
         } catch (IOException e) {
             Log.d(TAG, "Exception=" + e.getMessage());
-            downloadListener.onError(e);
+//            downloadListener.onError(e);
             e.printStackTrace();
         } finally {
             if (os != null) {
@@ -204,17 +224,31 @@ public class HttpApiImp {
                 }
             }
         }
+
+        return mFile.getAbsolutePath();
     }
 
-    public static void upLoadPdf(int userId, int documentId, String json, File file, NetResponse<String> netResponse){
+    public static void upLoadPdf(int userId, int documentId, String json, File file, NetResponse<BaseEnty<String>> netResponse) {
         MultipartBody.Builder builder = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
-                .addFormDataPart("userId", userId+"")
-                .addFormDataPart("documentId", documentId+"")
+                .addFormDataPart("userId", userId + "")
+                .addFormDataPart("documentId", documentId + "")
                 .addFormDataPart("signData", json);
-            builder.addFormDataPart("file", file.getName(), RequestBody.create(MediaType.parse("image/*"), file));
+        builder.addFormDataPart("file", file.getName(), RequestBody.create(MediaType.parse("image/*"), file));
         RequestBody requestBody = builder.build();
-       Observable<BaseEnty> observable = RetrofitManager.getInstance().getService().upLoadSignData(requestBody);
-       observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(createResponse(netResponse));
+        Observable<BaseEnty<String>> observable = RetrofitManager.getInstance().getService().upLoadSignData(requestBody);
+        observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(createResponse(netResponse));
+    }
+
+    public static void getSignedList(int userId, int documentId, NetResponse<BaseEnty<List<SignInfo>>> netResponse) {
+        try {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("userId", userId + "");
+            jsonObject.put("documentId", documentId + "");
+            RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), jsonObject.toString());
+            Observable<BaseEnty<List<SignInfo>>> observable = RetrofitManager.getInstance().getService().getSignInfo(requestBody);
+            observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(createResponse(netResponse));
+        } catch (Exception e) {
+        }
     }
 }

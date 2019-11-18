@@ -1,23 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:padding="10dp"
     android:background="@android:color/white"
     android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:text="请按压手指3秒"
+        android:gravity="center"
+        android:textColor="@color/blue057"
+        android:textSize="20sp"
+        android:layout_height="wrap_content" />
 
-    <com.fantasy.androidmupdf.SignatureView
+    <ImageView
         android:id="@+id/signview"
-        android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:background="@drawable/finger_img"
+        android:layout_width="286dp"
+        android:layout_height="360dp" />
 
-    <com.fantasy.androidmupdf.view.DrawView
-        android:id="@+id/drawview"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:visibility="gone" />
+    <!--<com.fantasy.androidmupdf.view.DrawView-->
+        <!--android:id="@+id/drawview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="200dp"-->
+        <!--android:visibility="gone" />-->
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="450dp"
         android:layout_height="wrap_content"
         android:gravity="center">
 

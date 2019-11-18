@@ -50,15 +50,13 @@ public abstract class PenSignDialog extends BaseDialog {
     };
 
     public PenSignDialog(Context context) {
-        super(context, R.style.CustomBottomDialog);
+        super(context, R.style.CustomProgressDialog2);
     }
 
     protected void initView(){
         mDialogView = mInflater.inflate(R.layout.layout_pen_write, null);
         gameView=(DrawView)mDialogView.findViewById(R.id.drawview);
-       try {
-           zz = new Zc_Penutil(listen);
-       }catch (Exception e){}
+        gameView.setZOrderOnTop(true);
         mDialogView.findViewById(R.id.clear_draw).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,6 +75,7 @@ public abstract class PenSignDialog extends BaseDialog {
             @Override
             public void onClick(View view) {
                 dismiss();
+                gameView.clear();
             }
         });
     }
@@ -85,14 +84,25 @@ public abstract class PenSignDialog extends BaseDialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(mDialogView);
-        gameView.setZOrderOnTop(true);
+        zz = new Zc_Penutil(listen);
         getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
     }
 
     @Override
     public void show() {
         super.show();
-        openPen();
+        gameView.clear();
+        mDialogView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if(!isShowing())
+                    return;
+                try {
+                    openPen();
+                }catch (Exception e){}
+            }
+        }, 500);
+
     }
 
     @Override

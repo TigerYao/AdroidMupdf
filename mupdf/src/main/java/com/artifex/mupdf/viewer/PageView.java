@@ -537,8 +537,8 @@ public class PageView extends RelativeLayout {
             models = new ArrayList<>();
         PointF pointF = new PointF();
         float scale = mSourceScale * (float) getWidth() / (float) mSize.x;
-        float docRelX = (mLastTouchX - getLeft()) / scale;
-        float docRelY = (mLastTouchY - getTop()) / scale;
+        float docRelX = mLastTouchX/ scale;
+        float docRelY = mLastTouchY / scale;
         pointF.x = docRelX;
         pointF.y = docRelY;
         model.pointF = pointF;

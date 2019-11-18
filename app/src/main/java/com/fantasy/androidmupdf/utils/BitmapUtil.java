@@ -120,41 +120,31 @@ public class BitmapUtil {
         return Bitmap.createBitmap(newPix, cropWidth, cropHeight, Bitmap.Config.ARGB_8888);
     }
 
-    public static Bitmap renderCroppedGreyScaleBitmap(byte[] buffer, int width, int height) {
-        if (buffer != null && buffer.length != 0) {
-            Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-            int[] pixels = new int[width * height];
-            int inputOffset = 0;
-
-            for (int y = 0; y < height; ++y) {
-                int outputOffset = y * width;
-
-                for (int x = 0; x < width; ++x) {
-                    if((inputOffset + x)< buffer.length) {
-                        int grey = buffer[inputOffset + x] & 0xff;
-                        Log.d("LogUtils", "grey..." + grey);
-                        int color = Color.RED | grey * 65793;
-                        pixels[outputOffset + x] = color;
-                        Log.d("LogUtils", "pixels..." + pixels[outputOffset + x]);
-                        bitmap.setPixel(x, y, color);
-                    }
-                }
-
-                inputOffset += width;
-            }
-
-//            bitmap.setPixels(pixels, 0, width, 0, 0, width, height);
-            buffer = null;
-            pixels = null;
-            return bitmap;
-        } else {
-            return null;
-        }
-    }
-
     public static byte[] Bitmap2Bytes(Bitmap bm) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bm.compress(Bitmap.CompressFormat.PNG, 100, baos);
         return baos.toByteArray();
+    }
+
+    public static Bitmap getTransparentBitmap(Bitmap sourceImg, int number){
+        int[] argb = new int[sourceImg.getWidth() * sourceImg.getHeight()];
+
+        sourceImg.getPixels(argb, 0, sourceImg.getWidth(), 0, 0, sourceImg
+
+                .getWidth(), sourceImg.getHeight());// 获得图片的ARGB值
+
+        number = number * 255 / 100;
+
+        for (int i = 0; i < argb.length; i++) {
+
+            argb[i] = (number << 24) | (argb[i] & 0x00FFFFFF);
+
+        }
+
+        sourceImg = Bitmap.createBitmap(argb, sourceImg.getWidth(), sourceImg
+
+                .getHeight(), Bitmap.Config.ARGB_8888);
+
+        return sourceImg;
     }
 }

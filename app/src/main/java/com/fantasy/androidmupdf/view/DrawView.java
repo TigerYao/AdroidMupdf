@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PixelFormat;
+import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -65,6 +66,8 @@ public class DrawView extends SurfaceView  implements SurfaceHolder.Callback{
         paint.setStrokeCap(Paint.Cap.ROUND);
 
         mSurfaceHolder = getHolder();
+        mSurfaceHolder.setFormat(PixelFormat.TRANSLUCENT);
+//        mSurfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
         mSurfaceHolder.addCallback(this);
 
     }
@@ -189,12 +192,13 @@ public class DrawView extends SurfaceView  implements SurfaceHolder.Callback{
             canvas = mSurfaceHolder.lockCanvas();
             //Log.i(TAG, "draw_Penpath: "+rect.toString());
             //绘制背景
-            //canvas.drawColor(Color.TRANSPARENT, android.graphics.PorterDuff.Mode.CLEAR);
+            canvas.drawColor(Color.TRANSPARENT, android.graphics.PorterDuff.Mode.CLEAR);
 
             if(bitmapCache==null){
                 bitmapCache = Bitmap.createBitmap(canvas.getWidth(),canvas.getHeight(), Bitmap.Config.ARGB_8888);
-                Canvas canvas2 = new Canvas(bitmapCache);
-                canvas2.drawColor(Color.WHITE);
+//                Canvas canvas2 = new Canvas(bitmapCache);
+//                canvas2.drawColor(Color.RED);
+//                canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
                 canvas.drawBitmap(bitmapCache,0,0,paint);
             }else{
                 Canvas canvas1 = new Canvas(bitmapCache);

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PointF;
+import android.util.Log;
 
 import com.artifex.mupdf.viewer.SignAndFingerModel;
 import com.fantasy.androidmupdf.FileUtils;
@@ -30,21 +31,23 @@ public class PdfImgUtil {
      */
     public static String addText(Context ctx, List<SignAndFingerModel> models, String inPath, String outPath) {
         try {
-
             PdfReader reader = new PdfReader(inPath, "PDF".getBytes());///打开要写入的PDF
             FileOutputStream outputStream = new FileOutputStream(outPath);//设置涂鸦后的PDF
             PdfStamper stamp = new PdfStamper(reader, outputStream);
             for (SignAndFingerModel model : models) {
-                Bitmap bitmap = BitmapUtil.deleteNoUseWhiteSpace(Base64BitmapUtil.base64ToBitmap(model.data), Color.TRANSPARENT);
+                Bitmap bitmap = Base64BitmapUtil.base64ToBitmap(model.data);
+                if(model.type == 0)
+                   bitmap = BitmapUtil.deleteNoUseWhiteSpace(bitmap, Color.TRANSPARENT);
                 int pageNum = model.page + 1;
                 PointF pointF = model.pointF;
                 PdfContentByte over = stamp.getOverContent(pageNum);//////用于设置在第几页打印签名
                 byte[] bytes = Bitmap2Bytes(bitmap);
-                FileUtils.addJpgSignatureToGallery(BitmapUtil.renderCroppedGreyScaleBitmap(bytes, bitmap.getWidth(), bitmap.getHeight()), ctx);
+//                FileUtils.addJpgSignatureToGallery(BitmapUtil.renderCroppedGreyScaleBitmap(bytes, bitmap.getWidth(), bitmap.getHeight()), ctx);
                 Image img = Image.getInstance(bytes);//将要放到PDF的图片传过来，要设置为byte[]类型
                 com.lowagie.text.Rectangle rectangle = reader.getPageSize(pageNum);
                 img.setAlignment(1);
-                float scale = DisplayUtil.dp2px(10f, ctx) / bitmap.getHeight();
+//                float dpScale = bitmap.getHeight() > 150 ? 2 : 1 ;
+                float scale = DisplayUtil.dp2px(model.type == 0 ? 40f : 80f, ctx) / bitmap.getHeight();
                 img.scaleToFit(bitmap.getWidth() * scale * 0.5f, bitmap.getHeight() * scale * 0.5f);
                 img.setAbsolutePosition(pointF.x, rectangle.getHeight() - pointF.y - img.getPlainHeight() * 0.5f);
                 over.addImage(img);

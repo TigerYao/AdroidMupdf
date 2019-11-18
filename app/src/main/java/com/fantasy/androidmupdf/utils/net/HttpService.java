@@ -2,6 +2,7 @@ package com.fantasy.androidmupdf.utils.net;
 
 import com.fantasy.androidmupdf.model.BaseEnty;
 import com.fantasy.androidmupdf.model.DocumentInfo;
+import com.fantasy.androidmupdf.model.SignInfo;
 import com.fantasy.androidmupdf.model.UserInfo;
 
 import java.util.List;
@@ -23,13 +24,12 @@ public interface HttpService {
     Observable<BaseEnty<List<DocumentInfo>>> getSignPdfList(@Body RequestBody info);
 
     @POST("/ZCSign/GetSignedInfo")
-    Observable<BaseEnty<DocumentInfo>> getSignInfo(@Query("userId") int userId, @Query("documentId") int documentId);
+    Observable<BaseEnty<List<SignInfo>>> getSignInfo(@Body RequestBody body);
 
 
     @GET("ZCSign/DownloadPDF")
     Observable<ResponseBody> downloadPdfFile(@Query("documentUrl") String documentUrl);
 
-//    @FieldMap
-    @POST
-    Observable<BaseEnty> upLoadSignData(@Body RequestBody body);
+    @POST("ZCSign/UploadPDF")
+    Observable<BaseEnty<String>> upLoadSignData(@Body RequestBody body);
 }

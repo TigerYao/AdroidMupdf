@@ -15,19 +15,14 @@ import android.widget.Toast;
 import com.fantasy.androidmupdf.adapter.SimpleCommonRVAdapter;
 import com.fantasy.androidmupdf.model.BaseEnty;
 import com.fantasy.androidmupdf.model.DocumentInfo;
+import com.fantasy.androidmupdf.model.SignInfo;
 import com.fantasy.androidmupdf.utils.SignFingerUtils;
 import com.fantasy.androidmupdf.utils.net.HttpApiImp;
 
 import java.io.File;
 import java.util.List;
 
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
 import io.realm.Realm;
-import io.realm.RealmResults;
-import io.realm.rx.CollectionChange;
 
 public class DocumentListActivty extends BaseActivity {
 
@@ -52,49 +47,90 @@ public class DocumentListActivty extends BaseActivity {
                 holder.getView(R.id.document_state).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (TextUtils.isEmpty(item.localPath)) {
-                            String name = item.documentUrl;
-                            //通过Url得到保存到本地的文件名
-                            int index = name.lastIndexOf('/');//一定是找最后一个'/'出现的位置
-                            if (index != -1) {
-                                name = name.substring(index);
-                                File sdcardDir = Environment.getExternalStorageDirectory();
-                                String path = sdcardDir.getPath() + "/zhiyuweilai/pdfdownload";
-                                name = path + name;
-                            }
-                            File file = new File(name);
-                            if (file.exists() && file.length() > 0) {
-                                startDcoment(name, item.documentId);
-                            } else {
-                                showLoading();
-                                FileUtils.createFile(name);
-                                HttpApiImp.downloadPdf(item.documentUrl, name, new HttpApiImp.NetResponse<String>() {
-                                    @Override
-                                    public void onError(Throwable e) {
-                                        hideLoading();
-                                    }
-
-                                    @Override
-                                    public void onSuccess(String model) {
-                                        item.localPath = model;
-                                        startDcoment(model, item.documentId);
-                                        hideLoading();
-                                    }
-
-                                    @Override
-                                    public void onProgress(int progress) {
-
-                                    }
-                                });
-                            }
-                        } else
-                            startDcoment(item.localPath, item.documentId);
+                        onItemClick(item);
                     }
                 });
             }
         };
         mListView.setAdapter(mAdapter);
         loadData();
+    }
+
+    public void onItemClick(final DocumentInfo item){
+        if(item.sign){
+            showLoading();
+            HttpApiImp.getSignedList(userId, item.documentId, new HttpApiImp.NetResponse<BaseEnty<List<SignInfo>>>() {
+                @Override
+                public void onError(Throwable e) {
+                    hideLoading();
+                }
+
+                @Override
+                public void onSuccess(BaseEnty<List<SignInfo>> model) {
+                    hideLoading();
+                    downPdf(item, model.data.get(0));
+                }
+
+                @Override
+                public void onProgress(int progress) {
+
+                }
+            });
+        }else
+            downPdf(item, null);
+    }
+    private void downPdf(final DocumentInfo item, SignInfo signInfo) {
+        String localPath = item.sign ? item.signPath : item.localPath;
+        String urlPath = item.sign ? signInfo.signaturePDFUrl : item.documentUrl;
+        final int documentId = item.sign ? item.documentId : signInfo.documentId;
+        if (TextUtils.isEmpty(localPath)) {
+            String name = urlPath;
+            //通过Url得到保存到本地的文件名
+            int index = name.lastIndexOf('/');//一定是找最后一个'/'出现的位置
+            if (index != -1) {
+                name = name.substring(index);
+                File sdcardDir = Environment.getExternalStorageDirectory();
+                String path = sdcardDir.getPath() + "/zhiyuweilai/pdfdownload";
+                name = path + name;
+                isCanOpen(name, urlPath, documentId, item);
+            }
+        } else {
+//            startDcoment(localPath, documentId);
+            isCanOpen(localPath, urlPath, documentId, item);
+        }
+    }
+
+    private void isCanOpen(String name, String urlPath, final int documentId, final DocumentInfo item){
+        File file = new File(name);
+        if (file.exists() && file.length() > 0) {
+            startDcoment(name, documentId);
+        } else {
+            showLoading();
+            FileUtils.createFile(name);
+            HttpApiImp.downloadPdf(urlPath, name, new HttpApiImp.NetResponse<String>() {
+                @Override
+                public void onError(Throwable e) {
+                    hideLoading();
+                }
+
+                @Override
+                public void onSuccess(String model) {
+                    Realm.getDefaultInstance().beginTransaction();
+                    if (item.sign)
+                        item.signPath = model;
+                    else
+                        item.localPath = model;
+                    Realm.getDefaultInstance().commitTransaction();
+                    startDcoment(model, documentId);
+                    hideLoading();
+                }
+
+                @Override
+                public void onProgress(int progress) {
+
+                }
+            });
+        }
     }
 
     private void startDcoment(String path, int doucmentid) {
@@ -128,7 +164,7 @@ public class DocumentListActivty extends BaseActivity {
         List<DocumentInfo> documentInfos = ((SignApplication) getApplication()).getRealm()
                 .where(DocumentInfo.class)
                 .equalTo("userId", userId)
-                .findAllAsync();
+                .findAll();
         if (documentInfos == null || documentInfos.size() == 0) {
             loadFromNet();
         } else {

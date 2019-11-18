@@ -31,9 +31,11 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewAnimator;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -51,10 +53,12 @@ import com.artifex.mupdf.viewer.SearchTask;
 import com.artifex.mupdf.viewer.SearchTaskResult;
 import com.artifex.mupdf.viewer.SignAndFingerModel;
 import com.example.zc_penutil_v6.Zc_Penutil;
+import com.fantasy.androidmupdf.model.BaseEnty;
 import com.fantasy.androidmupdf.utils.Base64BitmapUtil;
 import com.fantasy.androidmupdf.utils.BitmapUtil;
 import com.fantasy.androidmupdf.utils.PdfImgUtil;
 import com.fantasy.androidmupdf.utils.net.HttpApiImp;
+import com.google.gson.Gson;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -726,22 +730,39 @@ public class DocumentActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        if (!mDocView.popHistory())
-            super.onBackPressed();
+
         if(models != null && !models.isEmpty()){
             new AlertDialog.Builder(this, 0).setMessage("签字完成，是否确认保存？").setPositiveButton("确认", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
+                    HttpApiImp.upLoadPdf(mUserId, mDocumentId, new Gson().toJson(models), new File(mFilePath), new HttpApiImp.NetResponse<BaseEnty<String>>() {
+                        @Override
+                        public void onError(Throwable e) {
+                            e.printStackTrace();
+                            Toast.makeText(getApplicationContext(), "上传失败，稍后重试", Toast.LENGTH_SHORT).show();
+                        }
 
+                        @Override
+                        public void onSuccess(BaseEnty<String> model) {
+                            Toast.makeText(getApplicationContext(), "上传成功", Toast.LENGTH_SHORT).show();
+                        }
+
+                        @Override
+                        public void onProgress(int progress) {
+
+                        }
+                    });
                 }
             }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     finish();
                 }
-            });
+            }).show();
 //            HttpApiImp.upLoadPdf();
-        }
+        }else
+//        if (!mDocView.popHistory())
+            super.onBackPressed();
     }
 
     private AlertDialog mSelectDialog;
@@ -756,10 +777,11 @@ public class DocumentActivity extends BaseActivity {
             builder.setSingleChoiceItems(com.fantasy.androidmupdf.R.array.operate_list, 0, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
+                   mSelectPositon = i;
                     switch (i) {
                         case 0:
                         case 2:
-                            showPenSignDialog(i);
+                            showPenSignDialog();
                             break;
                         case 1:
                             showFingerSignDialog();
@@ -781,19 +803,20 @@ public class DocumentActivity extends BaseActivity {
 
     private PenSignDialog mPenDialog;
     private FingerOpenDialog mFingerDialog;
+    private int mSelectPositon = -1;
 
     /**
      * 签字
      */
-    private void showPenSignDialog(final int type) {
+    private void showPenSignDialog() {
         if (mPenDialog == null)
             mPenDialog = new PenSignDialog(this) {
                 @Override
                 void saveSign(Bitmap bitmap) {
-                    createPdfImg(bitmap, type != 2);
-                    if (type == 2)
+                    if (mSelectPositon == 2) {
                         showFingerSignDialog();
-
+                    }
+                    createPdfImg(bitmap, mSelectPositon != 2, 0);
                 }
             };
         mPenDialog.show();
@@ -807,24 +830,24 @@ public class DocumentActivity extends BaseActivity {
             mFingerDialog = new FingerOpenDialog(this) {
                 @Override
                 void saveSign(Bitmap bitmap) {
-                    createPdfImg(bitmap, true);
+                    createPdfImg(bitmap, true, 1);
                 }
             };
         mFingerDialog.show();
     }
 
-    private void createPdfImg(Bitmap bitmap, boolean save) {
+    private void  createPdfImg(Bitmap bitmap ,boolean save, int type) {
         if (models == null)
             models = new ArrayList<>();
         PageView pageView = (PageView) mDocView.getDisplayedView();
         bitmap = BitmapUtil.scaleBitmap(bitmap, 1 / pageView.getScale());
         SignAndFingerModel model = new SignAndFingerModel();
-        model.type = 0;
+        model.type = type;
         model.data = Base64BitmapUtil.bitmapToBase64(bitmap);
         model = pageView.addSignImg(model);
         model.dataTime = System.currentTimeMillis() + "";
         models.add(model);
-        if (save)
+        if(save)
             onSaveBtm(pageView.models);
     }
 
@@ -833,8 +856,12 @@ public class DocumentActivity extends BaseActivity {
         Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(ObservableEmitter<String> e) throws Exception {
-                String outString = PdfImgUtil.addText(DocumentActivity.this, pageModels, mFilePath, mFilePath.replace(".pdf", "_c.pdf"));
-                e.onNext(outString);
+//                Bitmap srcbitmap = BitmapUtil.deleteNoUseWhiteSpace(bitmap, Color.TRANSPARENT);
+//                List<SignAndFingerModel> pageModels = createPdfImg(srcbitmap ,type);
+//                if(save) {
+                    String outString = PdfImgUtil.addText(DocumentActivity.this, pageModels, mFilePath, mFilePath.replace(".pdf", "_c.pdf"));
+                    e.onNext(outString);
+//                }
             }
         }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<String>() {
             @Override

@@ -47,6 +47,7 @@ public class BaseActivity extends AppCompatActivity {
     public void showLoading(){
         if (mLoadingView == null) {
             mLoadingView = new LoadingView(this, R.style.CustomProgressDialog2);
+            mLoadingView.setCanceledOnTouchOutside(false);
         }
         mLoadingView.show(); // 显示
     }

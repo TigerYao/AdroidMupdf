@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/cancel_draw"
+            style="@style/btn_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/cancel_btn"
+            android:text="取消" />
+
+        <Button
+            android:id="@+id/clear_draw"
+            style="@style/btn_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/cancel_draw"
+            android:background="@drawable/clear_btn"
+            android:text="清除" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1.0"
+            android:text="请在虚线内签字"
+            android:textColor="@color/blue057"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/save_draw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            style="@style/btn_style"
+            android:background="@drawable/save_btn"
+            android:text="确定" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/write_rect_bg"
+        android:layout_margin="10dp"
+        android:layout_height="0dp"
+        android:padding="5dp"
+        android:layout_weight="1.0">
+
+        <com.fantasy.androidmupdf.view.DrawView
+            android:id="@+id/drawview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2019年12月12日 星期三"
+            android:textColor="@color/red250"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>

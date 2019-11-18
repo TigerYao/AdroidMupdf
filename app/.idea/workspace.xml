@@ -1,0 +1,1220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="976b6b76-6f6e-4fce-801e-4014f5024ae1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____Users_huatu_Documents_GitHub_huatu_AndroidMuPDF_app_libs_droidText_0_5_jar_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____Users_huatu_Documents_GitHub_huatu_AndroidMuPDF_app_libs_zc_penutil_v6_jar_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____Users_huatu_Documents_GitHub_huatu_AndroidMuPDF_app_libs_zkandroidcore_jar_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____Users_huatu_Documents_GitHub_huatu_AndroidMuPDF_app_libs_zkandroidnidfpsensor_jar_unspecified_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_26_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_26_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_1_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_26_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_26_1_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_26_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_26_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_26_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_26_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_26_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_26_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_26_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_getkeepsafe_relinker_relinker_1_2_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_ForgetAll_LoadingDialog_v1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_3_0_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_7_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_itextpdf_itextg_5_5_10_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_logging_interceptor_3_8_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_9_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_1_13_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_adapter_rxjava2_2_3_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_converter_gson_2_3_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_retrofit_2_3_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_reactivex_rxjava2_rxandroid_2_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_reactivex_rxjava2_rxjava_2_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_realm_realm_android_library_object_server_4_3_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_realm_realm_annotations_4_3_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/armeabi-v7a/libIDFpr.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/armeabi-v7a/libIDFpr2.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/armeabi-v7a/libc++_shared.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/armeabi-v7a/libidfprcap.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/armeabi-v7a/libpen_zc_v6.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/armeabi-v7a/libzksensorcore.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/droidText.0.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/zc_penutil_v6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/zkandroidcore.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/zkandroidnidfpsensor.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/BaseActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/BaseDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/Bezier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/ControlTimedPoints.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/DocumentActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/DocumentListActivty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/FileUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/FingerOpenDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/PenSignDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/SignApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/SignatureView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/TimedPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/adapter/SimpleCommonRVAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/model/BaseEnty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/model/DocumentInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/model/UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/Base64BitmapUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/BitmapUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/DisplayUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/LogUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/PdfImgUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/RetrofitManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/SignFingerUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/net/HttpApiImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/net/HttpService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/net/SSLSocketBuild.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/net/SSLSocketFactoryCompat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/view/DrawView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/view/LoadingView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/cancel_btn.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/clear_btn.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/progressbar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/save_btn.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/shape_dialog_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/write_rect_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_document_list_activty.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/document_activity_one.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/document_list_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/document_pdf_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/layout_finger_dialog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/layout_pen_write.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/loading_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/page_item_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/menu/action_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/menu/layout_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/values/attrs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/fitz/Quad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/SignAndFingerModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mupdf/src/main/res/drawable/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/androidTest/java/com/tiger/settings/pdfjni/ExampleInstrumentedTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Buffer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/BufferInputStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/BufferOutputStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/ColorParams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/ColorSpace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Context.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Cookie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Device.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/DisplayList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/DisplayListDevice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Document.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/DocumentWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/DrawDevice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/FileStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Font.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Link.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Matrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/NativeDevice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Outline.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/PDFAnnotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/PDFDocument.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/PDFGraftMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/PDFObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/PDFPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/PDFWidget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Page.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Path.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/PathWalker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Pixmap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Quad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Rect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/RectI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/SeekableInputStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/SeekableOutputStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/SeekableStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Separation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Separations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Shade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/StrokeState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/StructuredText.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/StructuredTextWalker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/Text.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/TextWalker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/TryLaterException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/android/AndroidDrawDevice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/artifex/mupdf/fitz/android/AndroidImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/Annotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/ArrayDeque.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/AsyncTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/CancellableAsyncTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/CancellableTaskDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/ChoosePDFActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/ChoosePDFAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/ChoosePDFItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/Deque.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/FilePicker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/LinkInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/LinkInfoExternal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/LinkInfoInternal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/LinkInfoRemote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/LinkInfoVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/MuPDFActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/MuPDFAlert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/MuPDFAlertInternal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/MuPDFCancellableTaskDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/MuPDFCore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/MuPDFPageAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/MuPDFPageView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/MuPDFReaderView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/MuPDFReflowAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/MuPDFReflowView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/MuPDFView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/OutlineActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/OutlineActivityData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/OutlineAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/OutlineItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/PageView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/PrintDialogActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/ReaderView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/SafeAnimatorInflater.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/SearchTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/SearchTaskResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/Separation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/Stepper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/TextChar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/TextWord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/java/com/tiger/settings/pdfjni/mupdfdemo/WidgetType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pdfjni/src/test/java/com/tiger/settings/pdfjni/ExampleUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/../gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mupdf/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../mupdf/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mupdf/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mupdf/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/DocumentActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/DocumentActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/MuPDFCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/MuPDFCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/PageAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/PageAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/PageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/PageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/ReaderView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/ReaderView.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="78" column="7" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/SignApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/FingerOpenDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+              <folding>
+                <element signature="e#2001#2185#0" expanded="true" />
+                <element signature="e#2156#2335#0" expanded="true" />
+                <element signature="e#2334#2335#0" expanded="true" />
+                <element signature="e#2184#2185#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/DocumentActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="741" column="15" lean-forward="true" selection-start-line="741" selection-start-column="15" selection-end-line="741" selection-end-column="15" />
+              <folding>
+                <element signature="e#17839#17969#0" expanded="true" />
+                <element signature="e#17968#17969#0" expanded="true" />
+                <element signature="e#19400#19570#0" expanded="true" />
+                <element signature="e#19569#19570#0" expanded="true" />
+                <element signature="e#28383#28579#0" expanded="true" />
+                <element signature="e#28578#28579#0" expanded="true" />
+                <element signature="e#28605#28810#0" expanded="true" />
+                <element signature="e#28809#28810#0" expanded="true" />
+                <element signature="e#29983#29984#0" expanded="true" />
+                <element signature="e#30043#30044#0" expanded="true" />
+                <element signature="e#30368#30550#0" expanded="true" />
+                <element signature="e#30549#30550#0" expanded="true" />
+                <element signature="e#31490#31491#0" expanded="true" />
+                <element signature="e#31535#31536#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/DocumentListActivty.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="107" column="48" lean-forward="true" selection-start-line="107" selection-start-column="48" selection-end-line="107" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/SignFingerUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="249" column="13" selection-start-line="249" selection-start-column="13" selection-end-line="249" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3307#3308#0" expanded="true" />
+                <element signature="e#3347#3348#0" expanded="true" />
+                <element signature="e#6365#6366#0" expanded="true" />
+                <element signature="e#6403#6404#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/content/Context.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4785">
+              <caret line="363" column="27" selection-start-line="363" selection-start-column="27" selection-end-line="363" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/java/lang/Thread.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
+              <folding>
+                <element signature="e#2070#2071#0" expanded="true" />
+                <element signature="e#2121#2122#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/BitmapUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="466">
+              <caret line="140" column="17" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/PdfImgUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="42" column="70" selection-start-line="42" selection-start-column="70" selection-end-line="42" selection-end-column="70" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>mFileName</find>
+      <find>mScaleGestureDetector</find>
+      <find>mSearchView</find>
+      <find>Math.</find>
+      <find>buffer</find>
+      <find>savedInstanceState</find>
+      <find>startIDFPFingerSensor</find>
+      <find>onBack</find>
+      <find>onDes</find>
+      <find>startDcoment</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/model/UserInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/net/HttpService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/net/HttpApiImp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/MainActivity.java" />
+        <option value="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/SignAndFingerModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/Base64BitmapUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/model/DocumentInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/view/DrawView.java" />
+        <option value="$PROJECT_DIR$/src/main/res/drawable/cancel_btn.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/drawable/save_btn.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/drawable/clear_btn.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/drawable/write_rect_bg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/PenSignDialog.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/layout_finger_dialog.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/layout_pen_write.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/SignatureView.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/../build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/DisplayUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_document_list_activty.xml" />
+        <option value="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/PageView.java" />
+        <option value="$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/ReaderView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/PdfImgUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/BitmapUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/SignApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/SignFingerUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/FingerOpenDialog.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/DocumentActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/DocumentListActivty.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="205" />
+    <option name="y" value="23" />
+    <option name="width" value="1105" />
+    <option name="height" value="836" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="fantasy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="fantasy" type="462c0819:PsiDirectoryNode" />
+              <item name="androidmupdf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="fantasy" type="462c0819:PsiDirectoryNode" />
+              <item name="androidmupdf" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="drawable" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="values" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="mupdf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="mupdf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="mupdf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="mupdf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="mupdf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="mupdf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="artifex" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="mupdf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="artifex" type="462c0819:PsiDirectoryNode" />
+              <item name="mupdf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="mupdf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="artifex" type="462c0819:PsiDirectoryNode" />
+              <item name="mupdf" type="462c0819:PsiDirectoryNode" />
+              <item name="viewer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AndroidMuPDF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AndroidMuPDF" type="462c0819:PsiDirectoryNode" />
+              <item name="mupdf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="artifex" type="462c0819:PsiDirectoryNode" />
+              <item name="mupdf" type="462c0819:PsiDirectoryNode" />
+              <item name="viewer" type="462c0819:PsiDirectoryNode" />
+              <item name="PageView.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="device.picker.selection" value="37KNW18609016375" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/libs" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="976b6b76-6f6e-4fce-801e-4014f5024ae1" name="Default Changelist" comment="" />
+      <created>1574041381334</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574041381334</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="205" y="23" width="1105" height="836" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" visible="true" weight="0.21260583" />
+      <window_info id="Structure" side_tool="true" />
+      <window_info id="Build Variants" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="Resources Explorer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Run" weight="0.32871014" />
+      <window_info anchor="bottom" id="Logcat" sideWeight="0.49952963" weight="0.30097088" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="Debug" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.50047034" side_tool="true" weight="0.16366158" />
+      <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Build" visible="true" weight="0.25104022" />
+      <window_info anchor="bottom" id="Android Profiler" />
+      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Gradle" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Flutter Inspector" />
+      <window_info anchor="right" id="Preview" weight="0.33584195" />
+      <window_info anchor="right" id="Flutter Outline" />
+      <window_info anchor="right" id="Palette&#9;" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/net/HttpService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.9.0/43d4e686afe2f8bb360bc4890123f205955dfd5d/okhttp-3.9.0-sources.jar!/okhttp3/MultipartBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="317" column="19" selection-start-line="317" selection-start-column="19" selection-end-line="317" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.9.0/43d4e686afe2f8bb360bc4890123f205955dfd5d/okhttp-3.9.0-sources.jar!/okhttp3/MediaType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-402">
+          <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/net/HttpApiImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="220" selection-start-line="220" selection-end-line="220" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/graphics/PointF.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/model/UserInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/model/DocumentInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/view/DrawView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
+          <folding>
+            <element signature="e#6446#6447#0" expanded="true" />
+            <element signature="e#6480#6481#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/BaseDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable/cancel_btn.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable/save_btn.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable/clear_btn.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable/shape_dialog_bg.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable/write_rect_bg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/PenSignDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="83" column="13" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/layout_finger_dialog.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/layout_pen_write.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/SignatureView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="220" column="5" selection-start-line="220" selection-start-column="5" selection-end-line="220" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/SignAndFingerModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/DisplayUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="80" column="5" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/document_list_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15" />
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_document_list_activty.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/PageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4175">
+          <caret line="246" column="23" selection-start-line="246" selection-start-column="12" selection-end-line="246" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../mupdf/src/main/java/com/artifex/mupdf/viewer/ReaderView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="817" column="24" selection-start-line="817" selection-start-column="24" selection-end-line="817" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1748#1754#0" expanded="true" />
+            <element signature="e#1902#1908#0" expanded="true" />
+            <element signature="e#4255#4256#0" expanded="true" />
+            <element signature="e#4285#4286#0" expanded="true" />
+            <element signature="e#4324#4325#0" expanded="true" />
+            <element signature="e#4346#4347#0" expanded="true" />
+            <element signature="e#12265#12266#0" expanded="true" />
+            <element signature="e#12297#12298#0" expanded="true" />
+            <element signature="e#12332#12333#0" expanded="true" />
+            <element signature="e#12371#12372#0" expanded="true" />
+            <element signature="e#17129#17130#0" expanded="true" />
+            <element signature="e#17152#17153#0" expanded="true" />
+            <element signature="e#24231#24232#0" expanded="true" />
+            <element signature="e#24253#24254#0" expanded="true" />
+            <element signature="e#24298#24299#0" expanded="true" />
+            <element signature="e#24316#24317#0" expanded="true" />
+            <element signature="e#24693#24739#0" expanded="true" />
+            <element signature="e#27122#27188#0" expanded="true" />
+            <element signature="e#27187#27188#0" expanded="true" />
+            <element signature="e#27246#27314#0" expanded="true" />
+            <element signature="e#27313#27314#0" expanded="true" />
+            <element signature="e#30468#30469#0" expanded="true" />
+            <element signature="e#30508#30509#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/droidText.0.5.jar!/com/lowagie/text/Rectangle.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="144" column="17" selection-start-line="144" selection-start-column="17" selection-end-line="144" selection-end-column="17" />
+          <folding>
+            <element signature="e#3456#3457#0" expanded="true" />
+            <element signature="e#3498#3499#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/zkandroidcore.jar!/com/zkteco/android/biometric/core/utils/ToolUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="77" column="5" selection-start-line="53" selection-start-column="4" selection-end-line="77" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/graphics/Bitmap.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="230" column="16" selection-start-line="230" selection-start-column="16" selection-end-line="230" selection-end-column="16" />
+          <folding>
+            <element signature="e#6317#6318#0" expanded="true" />
+            <element signature="e#6368#6369#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/graphics/Color.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/droidText.0.5.jar!/com/lowagie/text/pdf/codec/PngImage.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="121" column="24" selection-start-line="121" selection-start-column="24" selection-end-line="121" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/droidText.0.5.jar!/com/lowagie/text/Image.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="260" column="36" selection-start-line="260" selection-start-column="36" selection-end-line="260" selection-end-column="36" />
+          <folding>
+            <element signature="e#19540#19541#0" expanded="true" />
+            <element signature="e#19591#19592#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/Base64BitmapUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/PdfImgUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="42" column="70" selection-start-line="42" selection-start-column="70" selection-end-line="42" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/BitmapUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="140" column="17" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/java/lang/Thread.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
+          <folding>
+            <element signature="e#2070#2071#0" expanded="true" />
+            <element signature="e#2121#2122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="78" column="7" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/content/Context.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4785">
+          <caret line="363" column="27" selection-start-line="363" selection-start-column="27" selection-end-line="363" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/SignApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/utils/SignFingerUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="249" column="13" selection-start-line="249" selection-start-column="13" selection-end-line="249" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3307#3308#0" expanded="true" />
+            <element signature="e#3347#3348#0" expanded="true" />
+            <element signature="e#6365#6366#0" expanded="true" />
+            <element signature="e#6403#6404#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/FingerOpenDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="e#2001#2185#0" expanded="true" />
+            <element signature="e#2156#2335#0" expanded="true" />
+            <element signature="e#2334#2335#0" expanded="true" />
+            <element signature="e#2184#2185#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/DocumentActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="741" column="15" lean-forward="true" selection-start-line="741" selection-start-column="15" selection-end-line="741" selection-end-column="15" />
+          <folding>
+            <element signature="e#17839#17969#0" expanded="true" />
+            <element signature="e#17968#17969#0" expanded="true" />
+            <element signature="e#19400#19570#0" expanded="true" />
+            <element signature="e#19569#19570#0" expanded="true" />
+            <element signature="e#28383#28579#0" expanded="true" />
+            <element signature="e#28578#28579#0" expanded="true" />
+            <element signature="e#28605#28810#0" expanded="true" />
+            <element signature="e#28809#28810#0" expanded="true" />
+            <element signature="e#29983#29984#0" expanded="true" />
+            <element signature="e#30043#30044#0" expanded="true" />
+            <element signature="e#30368#30550#0" expanded="true" />
+            <element signature="e#30549#30550#0" expanded="true" />
+            <element signature="e#31490#31491#0" expanded="true" />
+            <element signature="e#31535#31536#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fantasy/androidmupdf/DocumentListActivty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="107" column="48" lean-forward="true" selection-start-line="107" selection-start-column="48" selection-end-line="107" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

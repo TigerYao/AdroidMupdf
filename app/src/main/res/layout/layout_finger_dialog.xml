@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <com.fantasy.androidmupdf.SignatureView
+        android:id="@+id/signview"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <com.fantasy.androidmupdf.view.DrawView
+        android:id="@+id/drawview"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/cancel_draw"
+            style="@style/btn_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/cancel_btn"
+            android:text="取消" />
+
+        <Button
+            android:id="@+id/clear_draw"
+            style="@style/btn_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/cancel_draw"
+            android:background="@drawable/clear_btn"
+            android:text="清除" />
+
+        <Button
+            android:id="@+id/save_draw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            style="@style/btn_style"
+            android:background="@drawable/save_btn"
+            android:text="确定" />
+    </LinearLayout>
+</LinearLayout>

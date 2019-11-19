@@ -100,7 +100,7 @@ public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
         }
 
 
-//        if(upz!=valupz){
+        if(upz!=valupz){
 
             /*if(valupz>upz){
                 upz=upz/0.95f;
@@ -112,8 +112,8 @@ public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
         pen_paths.add(path);
         path = new Path();
         path.moveTo(zlx, zly);
-        paint.setStrokeWidth(upz);
-//        }
+//        paint.setStrokeWidth(upz);
+        }
         upx = x;
         upy = y;
     }

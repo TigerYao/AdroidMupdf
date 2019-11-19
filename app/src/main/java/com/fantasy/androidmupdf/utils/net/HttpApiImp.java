@@ -233,8 +233,8 @@ public class HttpApiImp {
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("userId", userId + "")
                 .addFormDataPart("documentId", documentId + "")
-                .addFormDataPart("signData", json);
-        builder.addFormDataPart("file", file.getName(), RequestBody.create(MediaType.parse("image/*"), file));
+                .addFormDataPart("signData", json)
+                .addFormDataPart("file", file.getName(), RequestBody.create(MediaType.parse("image/*"), file));
         RequestBody requestBody = builder.build();
         Observable<BaseEnty<String>> observable = RetrofitManager.getInstance().getService().upLoadSignData(requestBody);
         observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(createResponse(netResponse));

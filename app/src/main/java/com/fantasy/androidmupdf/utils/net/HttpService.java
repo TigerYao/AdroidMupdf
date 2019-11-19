@@ -30,6 +30,6 @@ public interface HttpService {
     @GET("ZCSign/DownloadPDF")
     Observable<ResponseBody> downloadPdfFile(@Query("documentUrl") String documentUrl);
 
-    @POST("ZCSign/UploadPDF")
+    @POST("ZCSign/UploadSignData")
     Observable<BaseEnty<String>> upLoadSignData(@Body RequestBody body);
 }

@@ -12,11 +12,11 @@ import com.fantasy.androidmupdf.view.LoadingView;
 public class BaseActivity extends AppCompatActivity {
     LoadingView mLoadingView;
     MenuItem mRefreshMenuItem;
+    ActionBar actionBar;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ActionBar actionBar = getActionBar();
+        actionBar = getActionBar();
         if(actionBar != null) actionBar.setTitle("智创网签系统");
     }
 
@@ -38,7 +38,7 @@ public class BaseActivity extends AppCompatActivity {
         int itemId = item.getItemId();
         switch (itemId){
             case R.id.action_delete:
-                finish();
+                onBackPressed();
                 break;
         }
         return true;

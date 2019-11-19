@@ -10,12 +10,14 @@ import android.widget.ImageView;
 
 import com.fantasy.androidmupdf.utils.BitmapUtil;
 import com.fantasy.androidmupdf.utils.SignFingerUtils;
+import com.fantasy.androidmupdf.utils.SoundUtils;
 import com.fantasy.androidmupdf.view.DrawView;
 
 public class FingerOpenDialog extends BaseDialog {
 
     private ImageView mSignView;
     private Bitmap mBmp;
+    private SoundUtils soundUtils;
 //    private SignatureView mSignView;
     public FingerOpenDialog(@NonNull Context context) {
         super(context,R.style.CustomBottomDialog);
@@ -26,26 +28,21 @@ public class FingerOpenDialog extends BaseDialog {
         super.initView();
         mDialogView = mInflater.inflate(R.layout.layout_finger_dialog, null);
         mSignView=(ImageView) mDialogView.findViewById(R.id.signview);
-
-//        mSignView = mDialogView.findViewById(R.id.signview);
         mDialogView.findViewById(R.id.clear_draw).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                gameView.clear();
-                dismiss();
-//                mSignView.clear();
+                mBmp = null;
+                mSignView.setImageBitmap(null);
             }
         });
         mDialogView.findViewById(R.id.save_draw).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dismiss();
-                Bitmap bitmap = BitmapUtil.getTransparentBitmap(mBmp, 50);
-                saveSign(bitmap);
-//                saveSign();
-//                gameView.setImageBitmap(null);
-//                saveSign(gameView.getBitmapCache());
-
+                if(mBmp != null) {
+                    Bitmap bitmap = BitmapUtil.getTransparentBitmap(mBmp, 50);
+                    saveSign(bitmap);
+                }
             }
         });
 
@@ -74,7 +71,6 @@ public class FingerOpenDialog extends BaseDialog {
                             mBmp = bitmap;
                             mSignView.setImageBitmap(bitmap);
                         }
-//                        saveSign(bitmap);
                     }
                 });
             }
@@ -84,15 +80,24 @@ public class FingerOpenDialog extends BaseDialog {
     @Override
     public void show() {
         super.show();
+        playTip();
         SignFingerUtils.getInstance().startFinger();
         mSignView.setImageBitmap(null);
     }
 
     @Override
     public void dismiss() {
+        if(soundUtils != null)
+            soundUtils.release();
         super.dismiss();
         SignFingerUtils.getInstance().pauseFinger();
     }
 
     void saveSign(Bitmap bitmap){}
+
+    private void playTip(){
+        if(soundUtils == null)
+            soundUtils = new SoundUtils();
+        soundUtils.playSound(getContext(), R.raw.finger_hint);
+    }
 }

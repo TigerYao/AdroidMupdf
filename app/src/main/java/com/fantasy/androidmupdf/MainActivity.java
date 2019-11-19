@@ -53,6 +53,7 @@ public class MainActivity extends BaseActivity {
     List<UserInfo> userInfos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setContentView(R.layout.activity_main);
         super.onCreate(savedInstanceState);
         mAppName = getResources().getString(R.string.app_name);
         mUserNameEt = findViewById(R.id.username_et);

@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
 import android.view.KeyEvent;
@@ -57,6 +58,7 @@ import com.fantasy.androidmupdf.model.BaseEnty;
 import com.fantasy.androidmupdf.utils.Base64BitmapUtil;
 import com.fantasy.androidmupdf.utils.BitmapUtil;
 import com.fantasy.androidmupdf.utils.PdfImgUtil;
+import com.fantasy.androidmupdf.utils.SignFingerUtils;
 import com.fantasy.androidmupdf.utils.net.HttpApiImp;
 import com.google.gson.Gson;
 
@@ -329,6 +331,12 @@ public class DocumentActivity extends BaseActivity {
             mFilenameView.setText(docTitle);
         else
             mFilenameView.setText(mFileName);
+        if(actionBar != null) {
+            if (TextUtils.isEmpty(docTitle))
+                actionBar.setTitle(docTitle);
+            else
+                actionBar.setTitle(mFileName);
+        }
 
         // Activate the seekbar
         mPageSlider.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -455,7 +463,7 @@ public class DocumentActivity extends BaseActivity {
         RelativeLayout layout = new RelativeLayout(this);
         layout.setBackgroundColor(Color.DKGRAY);
         layout.addView(mDocView);
-        layout.addView(mButtonsView);
+//        layout.addView(mButtonsView);
         setContentView(layout);
         mDocView.postDelayed(new Runnable() {
             @Override
@@ -505,7 +513,8 @@ public class DocumentActivity extends BaseActivity {
     @Override
     protected void onPause() {
         super.onPause();
-
+        if(mFingerDialog != null && mFingerDialog.isShowing())
+            SignFingerUtils.getInstance().pauseFinger();
         if (mSearchTask != null)
             mSearchTask.stop();
 
@@ -671,9 +680,9 @@ public class DocumentActivity extends BaseActivity {
         mSearchClose = (ImageButton) mButtonsView.findViewById(com.artifex.mupdf.R.id.searchClose);
         mSearchText = (EditText) mButtonsView.findViewById(com.artifex.mupdf.R.id.searchText);
         mLinkButton = (ImageButton) mButtonsView.findViewById(com.artifex.mupdf.R.id.linkButton);
-        mTopBarSwitcher.setVisibility(View.INVISIBLE);
-        mPageNumberView.setVisibility(View.INVISIBLE);
-        mPageSlider.setVisibility(View.INVISIBLE);
+//        mTopBarSwitcher.setVisibility(View.INVISIBLE);
+//        mPageNumberView.setVisibility(View.INVISIBLE);
+//        mPageSlider.setVisibility(View.INVISIBLE);
     }
 
     private void showKeyboard() {
@@ -719,6 +728,14 @@ public class DocumentActivity extends BaseActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        if(mFingerDialog != null && mFingerDialog.isShowing())
+            SignFingerUtils.getInstance().startFinger();
+    }
+
+
+    @Override
     protected void onStart() {
         super.onStart();
     }
@@ -730,7 +747,6 @@ public class DocumentActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-
         if(models != null && !models.isEmpty()){
             new AlertDialog.Builder(this, 0).setMessage("签字完成，是否确认保存？").setPositiveButton("确认", new DialogInterface.OnClickListener() {
                 @Override
@@ -745,6 +761,8 @@ public class DocumentActivity extends BaseActivity {
                         @Override
                         public void onSuccess(BaseEnty<String> model) {
                             Toast.makeText(getApplicationContext(), "上传成功", Toast.LENGTH_SHORT).show();
+                            setResult(RESULT_OK);
+                            finish();
                         }
 
                         @Override

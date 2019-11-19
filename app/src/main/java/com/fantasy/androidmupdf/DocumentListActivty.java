@@ -30,7 +30,9 @@ public class DocumentListActivty extends BaseActivity {
     BaseEnty<List<DocumentInfo>> documentListBaseEnty;
     int userId;
     SimpleCommonRVAdapter mAdapter;
-
+    Realm mRealm;
+    private final int REQUEST_SIGN_CODE = 1002;
+    private DocumentInfo mClickItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,10 +55,12 @@ public class DocumentListActivty extends BaseActivity {
             }
         };
         mListView.setAdapter(mAdapter);
+        mRealm = Realm.getDefaultInstance();
         loadData();
     }
 
     public void onItemClick(final DocumentInfo item){
+        mClickItem = item;
         if(item.sign){
             showLoading();
             HttpApiImp.getSignedList(userId, item.documentId, new HttpApiImp.NetResponse<BaseEnty<List<SignInfo>>>() {
@@ -66,7 +70,13 @@ public class DocumentListActivty extends BaseActivity {
                 }
 
                 @Override
-                public void onSuccess(BaseEnty<List<SignInfo>> model) {
+                public void onSuccess(final BaseEnty<List<SignInfo>> model) {
+                    mRealm.executeTransaction(new Realm.Transaction() {
+                        @Override
+                        public void execute(Realm realm) {
+                            realm.copyToRealmOrUpdate(model.data);
+                        }
+                    });
                     hideLoading();
                     downPdf(item, model.data.get(0));
                 }
@@ -115,12 +125,12 @@ public class DocumentListActivty extends BaseActivity {
 
                 @Override
                 public void onSuccess(String model) {
-                    Realm.getDefaultInstance().beginTransaction();
+                    mRealm.beginTransaction();
                     if (item.sign)
                         item.signPath = model;
                     else
                         item.localPath = model;
-                    Realm.getDefaultInstance().commitTransaction();
+                    mRealm.commitTransaction();
                     startDcoment(model, documentId);
                     hideLoading();
                 }
@@ -143,7 +153,22 @@ public class DocumentListActivty extends BaseActivity {
         intent.setData(Uri.fromFile(new File(path)));
         //intent.setData(data.getData()); // 会报错
         //intent.setData(Uri.parse(path)); // 会报错
-        startActivity(intent);
+        startActivityForResult(intent, REQUEST_SIGN_CODE);
+//        startActivity(intent);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_SIGN_CODE){
+            if(resultCode == RESULT_OK) {
+                mRealm.beginTransaction();
+                mClickItem.sign = true;
+                mClickItem.signPath = null;
+                mRealm.commitTransaction();
+                mAdapter.notifyDataSetChanged();
+            }
+        }
     }
 
     @Override
@@ -189,7 +214,7 @@ public class DocumentListActivty extends BaseActivity {
                 documentListBaseEnty = model;
                 mAdapter.setData(documentListBaseEnty.data);
                 hideLoading();
-                Realm.getDefaultInstance().executeTransaction(
+                mRealm.executeTransaction(
                         new Realm.Transaction() {
                             @Override
                             public void execute(Realm realm) {
@@ -211,7 +236,8 @@ public class DocumentListActivty extends BaseActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
+        mRealm.close();
         SignFingerUtils.getInstance().CloseDevice();
+        super.onDestroy();
     }
 }

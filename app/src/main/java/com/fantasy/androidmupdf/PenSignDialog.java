@@ -6,16 +6,22 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.zc_penutil_v6.Zc_Penutil;
 import com.example.zc_penutil_v6.Zc_Penutil_Listen;
+import com.fantasy.androidmupdf.utils.DateTimeUtils;
+import com.fantasy.androidmupdf.utils.SoundUtils;
 import com.fantasy.androidmupdf.view.DrawView;
+
+import java.util.Date;
 
 public abstract class PenSignDialog extends BaseDialog {
     private Zc_Penutil zz;
     private boolean isOpenPen = false;
     private DrawView gameView;
+    private TextView mSignTime;
     //事件监听
     Zc_Penutil_Listen listen=new Zc_Penutil_Listen() {
         @Override
@@ -48,6 +54,7 @@ public abstract class PenSignDialog extends BaseDialog {
 //            Log.i("AAAA", "GetTrajectory: 收到事件了"+arrays[0]+"事件名    "+arrays[1]+"x坐标    "+arrays[2]+"y坐标    "+arrays[3]+"z坐标    ");
         }
     };
+    private SoundUtils soundUtils;
 
     public PenSignDialog(Context context) {
         super(context, R.style.CustomProgressDialog2);
@@ -57,6 +64,7 @@ public abstract class PenSignDialog extends BaseDialog {
         mDialogView = mInflater.inflate(R.layout.layout_pen_write, null);
         gameView=(DrawView)mDialogView.findViewById(R.id.drawview);
         gameView.setZOrderOnTop(true);
+        mSignTime = mDialogView.findViewById(R.id.pen_time);
         mDialogView.findViewById(R.id.clear_draw).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,6 +74,7 @@ public abstract class PenSignDialog extends BaseDialog {
         mDialogView.findViewById(R.id.save_draw).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(gameView.getBitmapCache() != null)
                 saveSign(gameView.getBitmapCache());
                 dismiss();
             }
@@ -91,6 +100,7 @@ public abstract class PenSignDialog extends BaseDialog {
     @Override
     public void show() {
         super.show();
+        playTip();
         gameView.clear();
         mDialogView.postDelayed(new Runnable() {
             @Override
@@ -103,10 +113,13 @@ public abstract class PenSignDialog extends BaseDialog {
             }
         }, 500);
 
+        mSignTime.setText(DateTimeUtils.dateToString(new Date(), "yyyy年MM月dd日 EEEE"));
     }
 
     @Override
     public void dismiss() {
+        if(soundUtils != null)
+            soundUtils.release();
         super.dismiss();
         closePen();
     }
@@ -140,6 +153,12 @@ public abstract class PenSignDialog extends BaseDialog {
                 Log.i("cc", "Close_pen: 返回失败");
             }
         }
+    }
+
+    private void playTip(){
+        if(soundUtils == null)
+            soundUtils = new SoundUtils();
+        soundUtils.playSound(getContext(), R.raw.sign_hint);
     }
 
     abstract void saveSign(Bitmap bitmap);

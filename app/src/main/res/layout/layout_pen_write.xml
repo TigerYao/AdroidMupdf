@@ -72,6 +72,7 @@
         android:paddingLeft="20dp">
 
         <TextView
+            android:id="@+id/pen_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2019年12月12日 星期三"

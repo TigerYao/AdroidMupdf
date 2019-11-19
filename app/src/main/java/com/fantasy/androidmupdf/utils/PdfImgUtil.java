@@ -39,7 +39,7 @@ public class PdfImgUtil {
                 if(model.type == 0)
                    bitmap = BitmapUtil.deleteNoUseWhiteSpace(bitmap, Color.TRANSPARENT);
                 int pageNum = model.page + 1;
-                PointF pointF = model.pointF;
+                PointF pointF = model.rect;
                 PdfContentByte over = stamp.getOverContent(pageNum);//////用于设置在第几页打印签名
                 byte[] bytes = Bitmap2Bytes(bitmap);
 //                FileUtils.addJpgSignatureToGallery(BitmapUtil.renderCroppedGreyScaleBitmap(bytes, bitmap.getWidth(), bitmap.getHeight()), ctx);

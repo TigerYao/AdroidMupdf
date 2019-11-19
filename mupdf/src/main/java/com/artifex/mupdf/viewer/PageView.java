@@ -541,7 +541,7 @@ public class PageView extends RelativeLayout {
         float docRelY = mLastTouchY / scale;
         pointF.x = docRelX;
         pointF.y = docRelY;
-        model.pointF = pointF;
+        model.rect = pointF;
         model.page = getPage();
         models.add(model);
         return model;

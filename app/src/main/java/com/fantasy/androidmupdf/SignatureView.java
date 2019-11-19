@@ -22,6 +22,9 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.yaohu.zhichuang.androidmupdf.R;
+
 import java.util.ArrayList;
 import java.util.List;
 

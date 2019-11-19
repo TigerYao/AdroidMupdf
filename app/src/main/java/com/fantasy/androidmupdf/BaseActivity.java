@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.fantasy.androidmupdf.view.LoadingView;
+import com.yaohu.zhichuang.androidmupdf.R;
 
 public class BaseActivity extends AppCompatActivity {
     LoadingView mLoadingView;

@@ -18,6 +18,7 @@ import com.fantasy.androidmupdf.model.DocumentInfo;
 import com.fantasy.androidmupdf.model.SignInfo;
 import com.fantasy.androidmupdf.utils.SignFingerUtils;
 import com.fantasy.androidmupdf.utils.net.HttpApiImp;
+import com.yaohu.zhichuang.androidmupdf.R;
 
 import java.io.File;
 import java.util.List;
@@ -63,14 +64,15 @@ public class DocumentListActivty extends BaseActivity {
         mClickItem = item;
         if(item.sign){
             showLoading();
-            HttpApiImp.getSignedList(userId, item.documentId, new HttpApiImp.NetResponse<BaseEnty<List<SignInfo>>>() {
+            HttpApiImp.getSignedList(userId, item.documentId, new HttpApiImp.NetResponse<BaseEnty<SignInfo>>() {
                 @Override
                 public void onError(Throwable e) {
+                    Toast.makeText(getApplicationContext(), "文件下载失败，稍后重试", Toast.LENGTH_LONG).show();
                     hideLoading();
                 }
 
                 @Override
-                public void onSuccess(final BaseEnty<List<SignInfo>> model) {
+                public void onSuccess(final BaseEnty<SignInfo> model) {
                     mRealm.executeTransaction(new Realm.Transaction() {
                         @Override
                         public void execute(Realm realm) {
@@ -78,7 +80,7 @@ public class DocumentListActivty extends BaseActivity {
                         }
                     });
                     hideLoading();
-                    downPdf(item, model.data.get(0));
+                    downPdf(item, model.data);
                 }
 
                 @Override

@@ -146,21 +146,21 @@ public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
         bitmapCache = null;
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                pendown(event.getX(), event.getY(), 500);
-                break;
-            case MotionEvent.ACTION_MOVE:
-                penmove(event.getX(), event.getY(), 500);
-                break;
-            case MotionEvent.ACTION_UP:
-                penup();
-                break;
-        }
-        return true;
-    }
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//        switch (event.getAction()) {
+//            case MotionEvent.ACTION_DOWN:
+//                pendown(event.getX(), event.getY(), 500);
+//                break;
+//            case MotionEvent.ACTION_MOVE:
+//                penmove(event.getX(), event.getY(), 500);
+//                break;
+//            case MotionEvent.ACTION_UP:
+//                penup();
+//                break;
+//        }
+//        return true;
+//    }
 
     //surfaceview 创建时
     @Override
@@ -252,6 +252,10 @@ public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
                 mSurfaceHolder.unlockCanvasAndPost(canvas);
             }
         }
+    }
+
+    public boolean isDraw(){
+        return pen_paths!= null && pen_paths.size() > 0 && packCount > 0;
     }
 
     public Bitmap getBitmapCache() {

@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.artifex.mupdf.viewer.Logger;
 import com.fantasy.androidmupdf.model.UserInfo;
 import com.fantasy.androidmupdf.utils.net.HttpApiImp;
+import com.yaohu.zhichuang.androidmupdf.R;
 
 import java.io.File;
 import java.util.List;

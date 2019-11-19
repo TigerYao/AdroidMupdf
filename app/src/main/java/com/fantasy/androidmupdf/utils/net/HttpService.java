@@ -24,7 +24,7 @@ public interface HttpService {
     Observable<BaseEnty<List<DocumentInfo>>> getSignPdfList(@Body RequestBody info);
 
     @POST("/ZCSign/GetSignedInfo")
-    Observable<BaseEnty<List<SignInfo>>> getSignInfo(@Body RequestBody body);
+    Observable<BaseEnty<SignInfo>> getSignInfo(@Body RequestBody body);
 
 
     @GET("ZCSign/DownloadPDF")

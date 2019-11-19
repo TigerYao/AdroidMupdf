@@ -12,6 +12,7 @@ import com.fantasy.androidmupdf.utils.BitmapUtil;
 import com.fantasy.androidmupdf.utils.SignFingerUtils;
 import com.fantasy.androidmupdf.utils.SoundUtils;
 import com.fantasy.androidmupdf.view.DrawView;
+import com.yaohu.zhichuang.androidmupdf.R;
 
 public class FingerOpenDialog extends BaseDialog {
 

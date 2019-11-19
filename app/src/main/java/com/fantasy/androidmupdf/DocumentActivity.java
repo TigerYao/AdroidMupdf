@@ -792,7 +792,7 @@ public class DocumentActivity extends BaseActivity {
         if (mSelectDialog == null) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this, 0);
             builder.setTitle("单选");
-            builder.setSingleChoiceItems(com.fantasy.androidmupdf.R.array.operate_list, 0, new DialogInterface.OnClickListener() {
+            builder.setSingleChoiceItems(com.yaohu.zhichuang.androidmupdf.R.array.operate_list, 0, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                    mSelectPositon = i;

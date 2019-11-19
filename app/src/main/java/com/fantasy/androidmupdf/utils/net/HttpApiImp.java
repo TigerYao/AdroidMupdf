@@ -240,13 +240,13 @@ public class HttpApiImp {
         observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(createResponse(netResponse));
     }
 
-    public static void getSignedList(int userId, int documentId, NetResponse<BaseEnty<List<SignInfo>>> netResponse) {
+    public static void getSignedList(int userId, int documentId, NetResponse<BaseEnty<SignInfo>> netResponse) {
         try {
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("userId", userId + "");
             jsonObject.put("documentId", documentId + "");
             RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), jsonObject.toString());
-            Observable<BaseEnty<List<SignInfo>>> observable = RetrofitManager.getInstance().getService().getSignInfo(requestBody);
+            Observable<BaseEnty<SignInfo>> observable = RetrofitManager.getInstance().getService().getSignInfo(requestBody);
             observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(createResponse(netResponse));
         } catch (Exception e) {
         }

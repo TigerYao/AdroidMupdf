@@ -6,11 +6,11 @@ realm {
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.fantasy.androidmupdf"
+        applicationId "com.yaohu.zhichuang.androidmupdf"
         minSdkVersion 19
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.003"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
             abiFilters "armeabi-v7a"

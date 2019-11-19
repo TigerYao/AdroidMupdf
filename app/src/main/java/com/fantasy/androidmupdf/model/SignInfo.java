@@ -8,6 +8,6 @@ public class SignInfo extends RealmObject {
     public int userId;
     @PrimaryKey
     public int signatureId;
-//    public String signatureData;
+    public String signatureData;
     public String signaturePDFUrl;
 }

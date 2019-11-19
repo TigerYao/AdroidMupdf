@@ -15,6 +15,7 @@ import com.lowagie.text.Image;
 import com.lowagie.text.pdf.PdfContentByte;
 import com.lowagie.text.pdf.PdfReader;
 import com.lowagie.text.pdf.PdfStamper;
+import com.lowagie.text.pdf.parser.PdfTextExtractor;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;

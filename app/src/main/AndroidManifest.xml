@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.fantasy.androidmupdf">
+    package="com.yaohu.zhichuang.androidmupdf">
     <!-- 读写SD卡 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".SignApplication"
+        android:name="com.fantasy.androidmupdf.SignApplication"
         android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/sign_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DocumentListActivty"  android:screenOrientation="landscape"/>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.fantasy.androidmupdf.DocumentListActivty"  android:screenOrientation="landscape"/>
+        <activity android:name="com.fantasy.androidmupdf.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DocumentActivity" android:screenOrientation="landscape">
+        <activity android:name="com.fantasy.androidmupdf.DocumentActivity" android:screenOrientation="landscape">
             <intent-filter tools:ignore="AppLinkUrlError">
                 <action android:name="android.intent.action.VIEW" />
 

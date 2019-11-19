@@ -14,6 +14,7 @@ import com.example.zc_penutil_v6.Zc_Penutil_Listen;
 import com.fantasy.androidmupdf.utils.DateTimeUtils;
 import com.fantasy.androidmupdf.utils.SoundUtils;
 import com.fantasy.androidmupdf.view.DrawView;
+import com.yaohu.zhichuang.androidmupdf.R;
 
 import java.util.Date;
 
@@ -74,8 +75,8 @@ public abstract class PenSignDialog extends BaseDialog {
         mDialogView.findViewById(R.id.save_draw).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(gameView.getBitmapCache() != null)
-                saveSign(gameView.getBitmapCache());
+                if(gameView.getBitmapCache() != null && gameView.isDraw())
+                    saveSign(gameView.getBitmapCache());
                 dismiss();
             }
         });

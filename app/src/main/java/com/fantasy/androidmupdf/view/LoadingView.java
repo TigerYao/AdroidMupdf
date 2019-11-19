@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.WindowManager;
 
-import com.fantasy.androidmupdf.R;
+import com.yaohu.zhichuang.androidmupdf.R;
 
 public class LoadingView extends ProgressDialog {
 

@@ -136,6 +136,7 @@ public class DocumentActivity extends BaseActivity {
     }
 
     private int mUserId, mDocumentId;
+    private String title;
 
     /**
      * Called when the activity is first created.
@@ -149,6 +150,7 @@ public class DocumentActivity extends BaseActivity {
         mAlertBuilder = new AlertDialog.Builder(this);
         mUserId = getIntent().getIntExtra("userId", -1);
         mDocumentId = getIntent().getIntExtra("documentId", -1);
+        title = getIntent().getStringExtra("title");
         if (core == null) {
             if (savedInstanceState != null && savedInstanceState.containsKey("FileName")) {
                 mFileName = savedInstanceState.getString("FileName");
@@ -232,6 +234,11 @@ public class DocumentActivity extends BaseActivity {
         }
 
         createUI(savedInstanceState);
+    }
+
+    @Override
+    public String getPageTitle() {
+        return title;
     }
 
     public void requestPassword(final Bundle savedInstanceState) {
@@ -331,12 +338,6 @@ public class DocumentActivity extends BaseActivity {
             mFilenameView.setText(docTitle);
         else
             mFilenameView.setText(mFileName);
-        if(actionBar != null) {
-            if (TextUtils.isEmpty(docTitle))
-                actionBar.setTitle(docTitle);
-            else
-                actionBar.setTitle(mFileName);
-        }
 
         // Activate the seekbar
         mPageSlider.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

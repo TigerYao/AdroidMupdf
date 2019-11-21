@@ -11,10 +11,17 @@ android {
         targetSdkVersion 26
         versionCode 3
         versionName "1.003"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
             abiFilters "armeabi-v7a"
         }
+    }
+    dexOptions{
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+        additionalParameters = ['--multi-dex',
+                                '--set-max-idx-number=62000']
     }
     buildTypes {
         release {
@@ -34,6 +41,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support:multidex:1.0.1'
 //    implementation project(':pdfjni')
     implementation project(':mupdf')
 //    implementation 'com.itextpdf:itextg:5.5.10'
@@ -48,5 +56,6 @@ dependencies {
 
     api 'com.squareup.okhttp3:logging-interceptor:3.8.1'//拦截器
 //    api 'com.github.ForgetAll:LoadingDialog:v1.0.1'
-
+//implementation group: 'io.netty', name: 'netty-all', version: '4.1.11.Final'
+//    implementation group: 'io.netty', name: 'netty-all', version: '4.1.31.Final'
 }

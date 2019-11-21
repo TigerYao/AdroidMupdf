@@ -11,6 +11,7 @@ buildscript {
         }
         google()
 //        maven { url 'http://maven.ghostscript.com' }
+        maven{ url 'http://central.maven.org/maven2/'}
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.0'
@@ -30,6 +31,7 @@ allprojects {
             name 'Google'
         }
 //        maven { url 'http://maven.ghostscript.com' }
+        maven{ url 'http://central.maven.org/maven2/'}
     }
 }
 

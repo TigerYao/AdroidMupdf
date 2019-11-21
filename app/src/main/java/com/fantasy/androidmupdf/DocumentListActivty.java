@@ -60,6 +60,11 @@ public class DocumentListActivty extends BaseActivity {
         loadData();
     }
 
+    @Override
+    public String getPageTitle() {
+        return "签批文档列表";
+    }
+
     public void onItemClick(final DocumentInfo item){
         mClickItem = item;
         if(item.sign){
@@ -161,6 +166,7 @@ public class DocumentListActivty extends BaseActivity {
         intent.setAction(Intent.ACTION_VIEW);
         intent.putExtra("userId", userId);
         intent.putExtra("documentId", doucmentid);
+        intent.putExtra("title", mClickItem.documentTitle);
         intent.setData(Uri.fromFile(new File(path)));
         //intent.setData(data.getData()); // 会报错
         //intent.setData(Uri.parse(path)); // 会报错

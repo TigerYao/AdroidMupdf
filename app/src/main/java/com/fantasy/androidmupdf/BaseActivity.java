@@ -18,7 +18,11 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         actionBar = getActionBar();
-        if(actionBar != null) actionBar.setTitle("智创网签系统");
+        if(actionBar != null) actionBar.setTitle(getPageTitle());
+    }
+
+    public String getPageTitle(){
+        return "智创网签系统";
     }
 
     /**

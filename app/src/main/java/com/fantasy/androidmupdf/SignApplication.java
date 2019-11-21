@@ -1,6 +1,8 @@
 package com.fantasy.androidmupdf;
 
 import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import com.artifex.mupdf.viewer.SignAndFingerModel;
 import com.fantasy.androidmupdf.utils.SignFingerUtils;
@@ -23,5 +25,11 @@ public class SignApplication extends Application {
 
     public Realm getRealm() {
         return Realm.getDefaultInstance();
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 }

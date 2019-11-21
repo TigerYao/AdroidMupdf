@@ -8,14 +8,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:paddingLeft="80dp"
+        android:paddingRight="80dp"
         android:gravity="center">
 
         <Button
             android:id="@+id/cancel_draw"
             style="@style/btn_style"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_margin="10dp"
@@ -25,7 +25,7 @@
         <Button
             android:id="@+id/clear_draw"
             style="@style/btn_style"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_toRightOf="@id/cancel_draw"
@@ -39,11 +39,11 @@
             android:layout_weight="1.0"
             android:text="请在虚线内签字"
             android:textColor="@color/blue057"
-            android:textSize="20dp" />
+            android:textSize="25dp" />
 
         <Button
             android:id="@+id/save_draw"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_margin="10dp"
@@ -55,8 +55,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:background="@drawable/write_rect_bg"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:padding="5dp"
         android:layout_weight="1.0">
 
@@ -68,7 +71,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="150dp"
         android:paddingLeft="20dp">
 
         <TextView

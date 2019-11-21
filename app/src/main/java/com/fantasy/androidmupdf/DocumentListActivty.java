@@ -63,6 +63,13 @@ public class DocumentListActivty extends BaseActivity {
     public void onItemClick(final DocumentInfo item){
         mClickItem = item;
         if(item.sign){
+            if(!TextUtils.isEmpty(item.signPath)) {
+                File file = new File(item.signPath);
+                if (file.exists() && file.length() > 0) {
+                    startDcoment(item.signPath, item.documentId);
+                    return;
+                }
+            }
             showLoading();
             HttpApiImp.getSignedList(userId, item.documentId, new HttpApiImp.NetResponse<BaseEnty<SignInfo>>() {
                 @Override
@@ -132,7 +139,9 @@ public class DocumentListActivty extends BaseActivity {
                         item.signPath = model;
                     else
                         item.localPath = model;
+                    mRealm.copyToRealmOrUpdate(item);
                     mRealm.commitTransaction();
+                    mAdapter.notifyDataSetChanged();
                     startDcoment(model, documentId);
                     hideLoading();
                 }
@@ -167,6 +176,7 @@ public class DocumentListActivty extends BaseActivity {
                 mRealm.beginTransaction();
                 mClickItem.sign = true;
                 mClickItem.signPath = null;
+                mRealm.copyToRealmOrUpdate(mClickItem);
                 mRealm.commitTransaction();
                 mAdapter.notifyDataSetChanged();
             }

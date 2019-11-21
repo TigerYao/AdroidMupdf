@@ -104,9 +104,13 @@ public class DocumentListActivty extends BaseActivity {
             downPdf(item, null);
     }
     private void downPdf(final DocumentInfo item, SignInfo signInfo) {
-        String localPath = item.sign ? item.signPath : item.localPath;
-        String urlPath = item.sign ? signInfo.signaturePDFUrl : item.documentUrl;
-        final int documentId = item.sign ? item.documentId : signInfo.documentId;
+        String localPath = item.sign || signInfo == null ? item.signPath : item.localPath;
+        String urlPath = item.sign && signInfo != null ? signInfo.signaturePDFUrl : item.documentUrl;
+        if(TextUtils.isEmpty(urlPath)){
+            Toast.makeText(getApplicationContext(), "文件不存在", Toast.LENGTH_LONG).show();
+            return;
+        }
+        final int documentId = item.documentId;
         if (TextUtils.isEmpty(localPath)) {
             String name = urlPath;
             //通过Url得到保存到本地的文件名

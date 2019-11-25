@@ -16,11 +16,14 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.artifex.mupdf.viewer.Logger;
 import com.fantasy.androidmupdf.model.UserInfo;
+import com.fantasy.androidmupdf.utils.DisplayUtil;
 import com.fantasy.androidmupdf.utils.net.HttpApiImp;
 import com.yaohu.zhichuang.androidmupdf.R;
 
@@ -42,23 +45,21 @@ import io.realm.RealmResults;
  * </pre>
  */
 public class MainActivity extends BaseActivity {
-    private String mAppName;
-    // 下面是申请权限的请求码
-    private static final int PERMISSIONS_REQUEST_CODE_ON_CREATE = 0;
-    private static final int PERMISSIONS_REQUEST_CODE_SELECT_FILE = 1;
-
-    private static final int REQUEST_CODE_SELECT_FILE = 0;
+//    private String mAppName;
 //    Realm mRealm;
     EditText mUserNameEt;
     EditText mPswEt;
     List<UserInfo> userInfos;
+    ViewGroup mRootView;
+    ScrollView mScrollView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
         super.onCreate(savedInstanceState);
-        mAppName = getResources().getString(R.string.app_name);
         mUserNameEt = findViewById(R.id.username_et);
         mPswEt = findViewById(R.id.psw_et);
+        mRootView = findViewById(R.id.rootView);
+        mScrollView = findViewById(R.id.scrollview);
         findViewById(R.id.btn_main).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,27 +70,23 @@ public class MainActivity extends BaseActivity {
                 startActivityForResult(intent, REQUEST_CODE_SELECT_FILE);
             }
         });
-
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                == PackageManager.PERMISSION_DENIED) {
-            showAlertDialog("检测到您禁止 " + mAppName + " 读写手机存储，这将会导致无法正常" +
-                    "读取本地文件。建议您允许读写手机存储。", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                    ActivityCompat.requestPermissions(MainActivity.this,
-                            new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                            PERMISSIONS_REQUEST_CODE_ON_CREATE);
-                }
-            });
-        }
          userInfos = Realm.getDefaultInstance().where(UserInfo.class).findAll();
-        if(userInfos != null && userInfos.size() > 0){
-            Intent intent = new Intent(MainActivity.this, DocumentListActivty.class);
-            intent.putExtra("userId", userInfos.get(0).userId);
-            MainActivity.this.startActivity(intent);
-            finish();
-        }
+         mScrollView.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+             @Override
+             public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                 if (oldBottom>bottom) {
+                     mScrollView.scrollBy(0, (int)DisplayUtil.dp2px(60, MainActivity.this));
+                 } else if(bottom>oldBottom) {
+//                     mScrollView.fullScroll(ScrollView.FOCUS_UP);
+                 }
+             }
+         });
+//        if(userInfos != null && userInfos.size() > 0){
+//            Intent intent = new Intent(MainActivity.this, DocumentListActivty.class);
+//            intent.putExtra("userId", userInfos.get(0).userId);
+//            MainActivity.this.startActivity(intent);
+//            finish();
+//        }
     }
 
     @Override
@@ -172,18 +169,6 @@ public class MainActivity extends BaseActivity {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
-    /**
-     * 提示对话框，带有“确定”按钮
-     *
-     * @param message  提示内容
-     * @param listener “确定”按钮的点击监听器
-     */
-    private void showAlertDialog(String message, DialogInterface.OnClickListener listener) {
-        AlertDialog dialog = new AlertDialog.Builder(this).setMessage(message)
-                .setPositiveButton("确定", listener).create();
-        dialog.setCanceledOnTouchOutside(false);
-        dialog.show();
-    }
 
     public void onClick(View view) {
         if (mUserNameEt.getText() == null || TextUtils.isEmpty(mUserNameEt.getText().toString()))

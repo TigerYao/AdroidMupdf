@@ -2,7 +2,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <corners android:radius="10dp" />
     <solid android:color="#ffffff" />
+    <padding android:left="10dp" android:right="10dp"/>
     <stroke
-        android:width="2dp"
+        android:width="1px"
         android:color="@color/bg_night_003" />
 </shape>

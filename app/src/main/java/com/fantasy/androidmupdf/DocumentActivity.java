@@ -748,38 +748,38 @@ public class DocumentActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        if(models != null && !models.isEmpty()){
-            new AlertDialog.Builder(this, 0).setMessage("签字完成，是否确认保存？").setPositiveButton("确认", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    HttpApiImp.upLoadPdf(mUserId, mDocumentId, new Gson().toJson(models), new File(mFilePath), new HttpApiImp.NetResponse<BaseEnty<String>>() {
-                        @Override
-                        public void onError(Throwable e) {
-                            e.printStackTrace();
-                            Toast.makeText(getApplicationContext(), "上传失败，稍后重试", Toast.LENGTH_SHORT).show();
-                        }
-
-                        @Override
-                        public void onSuccess(BaseEnty<String> model) {
-                            Toast.makeText(getApplicationContext(), "上传成功", Toast.LENGTH_SHORT).show();
-                            setResult(RESULT_OK);
-                            finish();
-                        }
-
-                        @Override
-                        public void onProgress(int progress) {
-
-                        }
-                    });
-                }
-            }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    finish();
-                }
-            }).show();
-//            HttpApiImp.upLoadPdf();
-        }else
+//        if(models != null && !models.isEmpty()){
+//            new AlertDialog.Builder(this, 0).setMessage("签字完成，是否确认保存？").setPositiveButton("确认", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialogInterface, int i) {
+//                    HttpApiImp.upLoadPdf(mUserId, mDocumentId, new Gson().toJson(models), new File(mFilePath), new HttpApiImp.NetResponse<BaseEnty<String>>() {
+//                        @Override
+//                        public void onError(Throwable e) {
+//                            e.printStackTrace();
+//                            Toast.makeText(getApplicationContext(), "失败，稍后重试", Toast.LENGTH_SHORT).show();
+//                        }
+//
+//                        @Override
+//                        public void onSuccess(BaseEnty<String> model) {
+//                            Toast.makeText(getApplicationContext(), "上传成功", Toast.LENGTH_SHORT).show();
+//                            setResult(RESULT_OK);
+//                            finish();
+//                        }
+//
+//                        @Override
+//                        public void onProgress(int progress) {
+//
+//                        }
+//                    });
+//                }
+//            }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialogInterface, int i) {
+//                    finish();
+//                }
+//            }).show();
+////            HttpApiImp.upLoadPdf();
+//        }else
 //        if (!mDocView.popHistory())
             super.onBackPressed();
     }

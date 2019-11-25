@@ -47,9 +47,9 @@ public class PdfImgUtil {
                 Image img = Image.getInstance(bytes);//将要放到PDF的图片传过来，要设置为byte[]类型
                 com.lowagie.text.Rectangle rectangle = reader.getPageSize(pageNum);
                 img.setAlignment(1);
-//                float dpScale = bitmap.getHeight() > 150 ? 2 : 1 ;
-                float scale = DisplayUtil.dp2px(model.type == 0 ? 40f : 80f, ctx) / bitmap.getHeight();
-                img.scaleToFit(bitmap.getWidth() * scale * 0.5f, bitmap.getHeight() * scale * 0.5f);
+                float dpScale = DisplayUtil.getDensity(ctx)/1.2f;
+                float scale = (model.type == 0 ? 20f : 40f) * dpScale / bitmap.getHeight();
+                img.scaleToFit(bitmap.getWidth() * scale , bitmap.getHeight() * scale);
                 img.setAbsolutePosition(pointF.x, rectangle.getHeight() - pointF.y - img.getPlainHeight() * 0.5f);
                 over.addImage(img);
             }

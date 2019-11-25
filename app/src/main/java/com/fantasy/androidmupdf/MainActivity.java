@@ -75,7 +75,8 @@ public class MainActivity extends BaseActivity {
              @Override
              public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
                  if (oldBottom>bottom) {
-                     mScrollView.scrollBy(0, (int)DisplayUtil.dp2px(60, MainActivity.this));
+                     mScrollView.fullScroll(ScrollView.FOCUS_DOWN);
+//                     mScrollView.scrollBy(0, (int)DisplayUtil.dp2px(-160, MainActivity.this));
                  } else if(bottom>oldBottom) {
 //                     mScrollView.fullScroll(ScrollView.FOCUS_UP);
                  }

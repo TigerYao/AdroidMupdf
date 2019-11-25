@@ -183,9 +183,10 @@ public class DocumentListActivty extends BaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == REQUEST_SIGN_CODE){
             if(resultCode == RESULT_OK) {
+                String path = data.getStringExtra("path");
                 mRealm.beginTransaction();
                 mClickItem.sign = true;
-                mClickItem.signPath = null;
+                mClickItem.signPath = path;
                 mRealm.copyToRealmOrUpdate(mClickItem);
                 mRealm.commitTransaction();
                 mAdapter.notifyDataSetChanged();

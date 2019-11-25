@@ -9,8 +9,8 @@ android {
         applicationId "com.yaohu.zhichuang.androidmupdf"
         minSdkVersion 19
         targetSdkVersion 26
-        versionCode 3
-        versionName "1.003"
+        versionCode 5
+        versionName "1.005"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {

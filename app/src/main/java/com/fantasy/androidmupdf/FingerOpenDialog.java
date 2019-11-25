@@ -41,7 +41,7 @@ public class FingerOpenDialog extends BaseDialog {
             public void onClick(View view) {
                 dismiss();
                 if(mBmp != null) {
-                    Bitmap bitmap = BitmapUtil.getTransparentBitmap(mBmp, 50);
+                    Bitmap bitmap = BitmapUtil.getTransparentBitmap(mBmp, 70);
                     saveSign(bitmap);
                 }
             }

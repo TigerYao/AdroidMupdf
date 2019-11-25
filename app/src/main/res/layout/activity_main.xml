@@ -5,23 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fitsSystemWindows="true"
-    android:padding="20dp">
+    android:padding="30dp">
 
     <RelativeLayout
         android:id="@+id/rootView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:background="@drawable/login_rect_bg"
         android:elevation="2dp"
         android:gravity="top"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:orientation="vertical"
         tools:context="com.fantasy.androidmupdf.MainActivity">
 
         <ImageView
             android:id="@+id/icon_logo"
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
@@ -30,12 +31,12 @@
 
         <ImageView
             android:id="@+id/icon"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/icon_logo"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
-            android:src="@mipmap/sign_icon" />
+            android:src="@drawable/sign_icon" />
 
         <TextView
             android:id="@+id/username_tv"
@@ -59,6 +60,7 @@
             android:background="@drawable/input_rect_bg"
             android:imeOptions="actionNext"
             android:maxLines="1"
+            android:singleLine="true"
             android:padding="10dp"
             android:textColor="#000000"
             android:textSize="22sp" />
@@ -87,6 +89,7 @@
             android:background="@drawable/input_rect_bg"
             android:inputType="textPassword"
             android:maxLines="1"
+            android:singleLine="true"
             android:padding="10dp"
             android:textColor="#000000"
             android:textSize="22sp" />

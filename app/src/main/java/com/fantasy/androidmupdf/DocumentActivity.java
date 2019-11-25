@@ -2,20 +2,16 @@ package com.fantasy.androidmupdf;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface.OnCancelListener;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.PointF;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
 import android.view.KeyEvent;
@@ -32,18 +28,8 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ViewAnimator;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-
-import com.artifex.mupdf.R;
 import com.artifex.mupdf.viewer.Logger;
 import com.artifex.mupdf.viewer.MuPDFCore;
 import com.artifex.mupdf.viewer.OutlineActivity;
@@ -53,20 +39,22 @@ import com.artifex.mupdf.viewer.ReaderView;
 import com.artifex.mupdf.viewer.SearchTask;
 import com.artifex.mupdf.viewer.SearchTaskResult;
 import com.artifex.mupdf.viewer.SignAndFingerModel;
-import com.example.zc_penutil_v6.Zc_Penutil;
-import com.fantasy.androidmupdf.model.BaseEnty;
 import com.fantasy.androidmupdf.utils.Base64BitmapUtil;
 import com.fantasy.androidmupdf.utils.BitmapUtil;
 import com.fantasy.androidmupdf.utils.PdfImgUtil;
 import com.fantasy.androidmupdf.utils.SignFingerUtils;
-import com.fantasy.androidmupdf.utils.net.HttpApiImp;
-import com.google.gson.Gson;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
@@ -75,7 +63,9 @@ public class DocumentActivity extends BaseActivity {
     /* The core rendering instance */
     enum TopBarMode {
         Main, Search, More
-    };
+    }
+
+    ;
     private final int OUTLINE_REQUEST = 0;
     private MuPDFCore core;
     private String mFileName;
@@ -514,7 +504,7 @@ public class DocumentActivity extends BaseActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if(mFingerDialog != null && mFingerDialog.isShowing())
+        if (mFingerDialog != null && mFingerDialog.isShowing())
             SignFingerUtils.getInstance().pauseFinger();
         if (mSearchTask != null)
             mSearchTask.stop();
@@ -731,7 +721,7 @@ public class DocumentActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if(mFingerDialog != null && mFingerDialog.isShowing())
+        if (mFingerDialog != null && mFingerDialog.isShowing())
             SignFingerUtils.getInstance().startFinger();
     }
 
@@ -748,7 +738,11 @@ public class DocumentActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-//        if(models != null && !models.isEmpty()){
+        if (models != null && !models.isEmpty()) {
+            Intent intent = new Intent();
+            intent.putExtra("path", mFilePath);
+            setResult(RESULT_OK, intent);
+            finish();
 //            new AlertDialog.Builder(this, 0).setMessage("签字完成，是否确认保存？").setPositiveButton("确认", new DialogInterface.OnClickListener() {
 //                @Override
 //                public void onClick(DialogInterface dialogInterface, int i) {
@@ -779,7 +773,7 @@ public class DocumentActivity extends BaseActivity {
 //                }
 //            }).show();
 ////            HttpApiImp.upLoadPdf();
-//        }else
+        } else
 //        if (!mDocView.popHistory())
             super.onBackPressed();
     }
@@ -796,7 +790,7 @@ public class DocumentActivity extends BaseActivity {
             builder.setSingleChoiceItems(com.yaohu.zhichuang.androidmupdf.R.array.operate_list, 0, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                   mSelectPositon = i;
+                    mSelectPositon = i;
                     switch (i) {
                         case 0:
                         case 2:
@@ -855,7 +849,7 @@ public class DocumentActivity extends BaseActivity {
         mFingerDialog.show();
     }
 
-    private void  createPdfImg(Bitmap bitmap ,boolean save, int type) {
+    private void createPdfImg(Bitmap bitmap, boolean save, int type) {
         if (models == null)
             models = new ArrayList<>();
         PageView pageView = (PageView) mDocView.getDisplayedView();
@@ -866,7 +860,7 @@ public class DocumentActivity extends BaseActivity {
         model = pageView.addSignImg(model);
         model.dataTime = System.currentTimeMillis() + "";
         models.add(model);
-        if(save)
+        if (save)
             onSaveBtm(pageView.models);
     }
 
@@ -878,8 +872,8 @@ public class DocumentActivity extends BaseActivity {
 //                Bitmap srcbitmap = BitmapUtil.deleteNoUseWhiteSpace(bitmap, Color.TRANSPARENT);
 //                List<SignAndFingerModel> pageModels = createPdfImg(srcbitmap ,type);
 //                if(save) {
-                    String outString = PdfImgUtil.addText(DocumentActivity.this, pageModels, mFilePath, mFilePath.replace(".pdf", "_c.pdf"));
-                    e.onNext(outString);
+                String outString = PdfImgUtil.addText(DocumentActivity.this, pageModels, mFilePath, mFilePath.replace(".pdf", "_c.pdf"));
+                e.onNext(outString);
 //                }
             }
         }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<String>() {

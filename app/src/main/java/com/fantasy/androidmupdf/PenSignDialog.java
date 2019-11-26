@@ -103,6 +103,7 @@ public abstract class PenSignDialog extends BaseDialog {
         super.show();
         playTip();
         gameView.clear();
+        gameView.openThread();
         mDialogView.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -121,6 +122,7 @@ public abstract class PenSignDialog extends BaseDialog {
     public void dismiss() {
         if(soundUtils != null)
             soundUtils.release();
+        gameView.closeThread();
         super.dismiss();
         closePen();
     }

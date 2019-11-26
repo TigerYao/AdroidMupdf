@@ -15,6 +15,8 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+import com.fantasy.androidmupdf.utils.SignFingerUtils;
+
 import java.util.ArrayList;
 
 /**
@@ -71,7 +73,7 @@ public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
         mSurfaceHolder.setFormat(PixelFormat.TRANSLUCENT);
 //        mSurfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
         mSurfaceHolder.addCallback(this);
-
+        openFingDialog = true;
     }
 
     //移动事件
@@ -146,6 +148,26 @@ public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
         bitmapCache = null;
     }
 
+    private boolean openFingDialog;
+    public void openThread(){
+        if(CanvasDraw != null && !openFingDialog) {
+            openFingDialog = true;
+            synchronized (CanvasDraw) {
+                CanvasDraw.notifyAll();
+            }
+        }
+    }
+
+    public void closeThread(){
+        if(CanvasDraw != null && openFingDialog)
+//        try {
+            openFingDialog = false;
+//            synchronized (CanvasDraw) {
+//                CanvasDraw.wait();
+//            }
+//        }catch (Exception e){}
+    }
+
 //    @Override
 //    public boolean onTouchEvent(MotionEvent event) {
 //        switch (event.getAction()) {
@@ -171,17 +193,27 @@ public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
             @Override
             public void run() {
                 while (drawing) {
-                    long start_time = System.currentTimeMillis();
-                    count = pen_paths.size();
-                    draw_Penpath();
-                    long end_time = System.currentTimeMillis();
-
-                    long value_time = end_time - start_time;
-                    if (value_time < 30) {
+                    synchronized (CanvasDraw) {
                         try {
-                            Thread.sleep(30 - (value_time));
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
+                            if (!openFingDialog) {
+                                CanvasDraw.wait();
+                                return;
+                            }
+                        } catch (Exception e) {
+//
+                        }
+                        long start_time = System.currentTimeMillis();
+                        count = pen_paths.size();
+                        draw_Penpath();
+                        long end_time = System.currentTimeMillis();
+
+                        long value_time = end_time - start_time;
+                        if (value_time < 30) {
+                            try {
+                                Thread.sleep(30 - (value_time));
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
                 }

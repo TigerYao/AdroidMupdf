@@ -28,6 +28,7 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewAnimator;
 
 import com.artifex.mupdf.viewer.Logger;
@@ -39,12 +40,16 @@ import com.artifex.mupdf.viewer.ReaderView;
 import com.artifex.mupdf.viewer.SearchTask;
 import com.artifex.mupdf.viewer.SearchTaskResult;
 import com.artifex.mupdf.viewer.SignAndFingerModel;
+import com.fantasy.androidmupdf.model.BaseEnty;
 import com.fantasy.androidmupdf.utils.Base64BitmapUtil;
 import com.fantasy.androidmupdf.utils.BitmapUtil;
 import com.fantasy.androidmupdf.utils.PdfImgUtil;
 import com.fantasy.androidmupdf.utils.SignFingerUtils;
+import com.fantasy.androidmupdf.utils.net.HttpApiImp;
+import com.google.gson.Gson;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -739,32 +744,38 @@ public class DocumentActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         if (models != null && !models.isEmpty()) {
-            Intent intent = new Intent();
-            intent.putExtra("path", mFilePath);
-            setResult(RESULT_OK, intent);
-            finish();
+//            Intent intent = new Intent();
+//            intent.putExtra("path", mFilePath);
+//            setResult(RESULT_OK, intent);
+//            finish();
 //            new AlertDialog.Builder(this, 0).setMessage("签字完成，是否确认保存？").setPositiveButton("确认", new DialogInterface.OnClickListener() {
 //                @Override
 //                public void onClick(DialogInterface dialogInterface, int i) {
-//                    HttpApiImp.upLoadPdf(mUserId, mDocumentId, new Gson().toJson(models), new File(mFilePath), new HttpApiImp.NetResponse<BaseEnty<String>>() {
-//                        @Override
-//                        public void onError(Throwable e) {
-//                            e.printStackTrace();
-//                            Toast.makeText(getApplicationContext(), "失败，稍后重试", Toast.LENGTH_SHORT).show();
-//                        }
-//
-//                        @Override
-//                        public void onSuccess(BaseEnty<String> model) {
-//                            Toast.makeText(getApplicationContext(), "上传成功", Toast.LENGTH_SHORT).show();
-//                            setResult(RESULT_OK);
-//                            finish();
-//                        }
-//
-//                        @Override
-//                        public void onProgress(int progress) {
-//
-//                        }
-//                    });
+            showLoading();
+            HttpApiImp.upLoadPdf(mUserId, mDocumentId, new Gson().toJson(models), new File(mFilePath), new HttpApiImp.NetResponse<BaseEnty<String>>() {
+                @Override
+                public void onError(Throwable e) {
+                    hideLoading();
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "失败，稍后重试", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onSuccess(BaseEnty<String> model) {
+                    hideLoading();
+                    try {
+                        new File(mFilePath).delete();
+                    }catch (Exception e){}
+                    Toast.makeText(getApplicationContext(), "上传成功", Toast.LENGTH_SHORT).show();
+                    setResult(RESULT_OK);
+                    finish();
+                }
+
+                @Override
+                public void onProgress(int progress) {
+
+                }
+            });
 //                }
 //            }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
 //                @Override
@@ -869,12 +880,11 @@ public class DocumentActivity extends BaseActivity {
         Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(ObservableEmitter<String> e) throws Exception {
-//                Bitmap srcbitmap = BitmapUtil.deleteNoUseWhiteSpace(bitmap, Color.TRANSPARENT);
-//                List<SignAndFingerModel> pageModels = createPdfImg(srcbitmap ,type);
-//                if(save) {
                 String outString = PdfImgUtil.addText(DocumentActivity.this, pageModels, mFilePath, mFilePath.replace(".pdf", "_c.pdf"));
+                try {
+                    new File(mFilePath).delete();
+                }catch (Exception es){}
                 e.onNext(outString);
-//                }
             }
         }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<String>() {
             @Override

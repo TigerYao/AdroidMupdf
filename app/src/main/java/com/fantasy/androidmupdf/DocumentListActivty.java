@@ -57,7 +57,8 @@ public class DocumentListActivty extends BaseActivity {
         };
         mListView.setAdapter(mAdapter);
         mRealm = Realm.getDefaultInstance();
-        loadData();
+//        loadData();
+        loadFromNet();
     }
 
     @Override
@@ -122,17 +123,21 @@ public class DocumentListActivty extends BaseActivity {
                 name = path + name;
                 isCanOpen(name, urlPath, documentId, item);
             }
-        } else {
-//            startDcoment(localPath, documentId);
-            isCanOpen(localPath, urlPath, documentId, item);
         }
+//
+//        else {
+//            startDcoment(localPath, documentId);
+//            isCanOpen(localPath, urlPath, documentId, item);
+//        }
     }
 
     private void isCanOpen(String name, String urlPath, final int documentId, final DocumentInfo item){
-        File file = new File(name);
-        if (file.exists() && file.length() > 0) {
-            startDcoment(name, documentId);
-        } else {
+//        File file = new File(name);
+//        if (file.exists() && file.length() > 0) {
+//            startDcoment(name, documentId);
+//        } else
+
+            {
             showLoading();
             FileUtils.createFile(name);
             HttpApiImp.downloadPdf(urlPath, name, new HttpApiImp.NetResponse<String>() {
@@ -183,13 +188,14 @@ public class DocumentListActivty extends BaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == REQUEST_SIGN_CODE){
             if(resultCode == RESULT_OK) {
-                String path = data.getStringExtra("path");
-                mRealm.beginTransaction();
-                mClickItem.sign = true;
-                mClickItem.signPath = path;
-                mRealm.copyToRealmOrUpdate(mClickItem);
-                mRealm.commitTransaction();
-                mAdapter.notifyDataSetChanged();
+                loadFromNet();
+//                String path = data.getStringExtra("path");
+//                mRealm.beginTransaction();
+//                mClickItem.sign = true;
+//                mClickItem.signPath = path;
+//                mRealm.copyToRealmOrUpdate(mClickItem);
+//                mRealm.commitTransaction();
+//                mAdapter.notifyDataSetChanged();
             }
         }
     }

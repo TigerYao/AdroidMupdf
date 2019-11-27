@@ -68,7 +68,7 @@ public class DocumentListActivty extends BaseActivity {
 
     public void onItemClick(final DocumentInfo item){
         mClickItem = item;
-//        if(item.sign){
+        if(item.sign){
 //            if(!TextUtils.isEmpty(item.signPath)) {
 //                File file = new File(item.signPath);
 //                if (file.exists() && file.length() > 0) {
@@ -76,7 +76,7 @@ public class DocumentListActivty extends BaseActivity {
 //                    return;
 //                }
 //            }
-            showLoading("获取签名..");
+            showLoading("获取签名...");
             HttpApiImp.getSignedList(userId, item.documentId, new HttpApiImp.NetResponse<BaseEnty<SignInfo>>() {
                 @Override
                 public void onError(Throwable e) {
@@ -101,8 +101,8 @@ public class DocumentListActivty extends BaseActivity {
 
                 }
             });
-//        }else
-//            downPdf(item, null);
+        }else
+            downPdf(item, null);
     }
     private void downPdf(final DocumentInfo item, SignInfo signInfo) {
 //        String localPath = item.sign || signInfo == null ? item.signPath : item.localPath;

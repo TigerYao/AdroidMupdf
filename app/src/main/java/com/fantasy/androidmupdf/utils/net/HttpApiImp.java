@@ -130,11 +130,8 @@ public class HttpApiImp {
 
     public static void downloadPdf(final String downloadUrl, final String name, final NetResponse netResponse) {
         try {
-//            JSONObject jsonObject = new JSONObject();
-//            jsonObject.put("documentUrl", downloadUrl + "");
-//            RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"), jsonObject.toString());
             Observable<ResponseBody> observable = RetrofitManager.getInstance().getService().downloadPdfFile(downloadUrl);
-            observable.subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).flatMap(new Function<ResponseBody, ObservableSource<String>>() {
+            observable.subscribeOn(Schedulers.io()).flatMap(new Function<ResponseBody, ObservableSource<String>>() {
                 @Override
                 public ObservableSource<String> apply(ResponseBody responseBody) throws Exception {
                      writeFileSDcard(responseBody, new File(name));

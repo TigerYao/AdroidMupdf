@@ -177,20 +177,20 @@ public class MainActivity extends BaseActivity {
         String userNm = mUserNameEt.getText().toString();
         if (mPswEt.getText() == null || TextUtils.isEmpty(mPswEt.getText().toString()))
             return;
-        showLoading();
+        showLoading("登录中...");
         String psw = mPswEt.getText().toString();
-        if(userInfos != null && userInfos.size() > 0) {
-            UserInfo userInfo = new UserInfo(userNm, psw);
-            int index = userInfos.indexOf(userInfo);
-            if (index > -1) {
-                userInfo = userInfos.get(index);
-                Intent intent = new Intent(MainActivity.this, DocumentListActivty.class);
-                intent.putExtra("userId", userInfo.userId);
-                MainActivity.this.startActivity(intent);
-                finish();
-                return;
-            }
-        }
+//        if(userInfos != null && userInfos.size() > 0) {
+//            UserInfo userInfo = new UserInfo(userNm, psw);
+//            int index = userInfos.indexOf(userInfo);
+//            if (index > -1) {
+//                userInfo = userInfos.get(index);
+//                Intent intent = new Intent(MainActivity.this, DocumentListActivty.class);
+//                intent.putExtra("userId", userInfo.userId);
+//                MainActivity.this.startActivity(intent);
+//                finish();
+//                return;
+//            }
+//        }
         HttpApiImp.NetResponse netResponse = new HttpApiImp.NetResponse<UserInfo>(){
             @Override
             public void onSuccess(final UserInfo model) {

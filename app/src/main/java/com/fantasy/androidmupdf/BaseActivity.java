@@ -78,6 +78,10 @@ public class BaseActivity extends AppCompatActivity {
         return true;
     }
 
+    public void showLoading(String tipMsg){
+       showLoading();
+       mLoadingView.setLoadingTip(tipMsg);
+    }
     public void showLoading(){
         if (mLoadingView == null) {
             mLoadingView = new LoadingView(this, R.style.CustomProgressDialog2);

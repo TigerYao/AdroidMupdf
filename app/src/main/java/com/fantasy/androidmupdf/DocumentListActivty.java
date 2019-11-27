@@ -68,30 +68,30 @@ public class DocumentListActivty extends BaseActivity {
 
     public void onItemClick(final DocumentInfo item){
         mClickItem = item;
-        if(item.sign){
-            if(!TextUtils.isEmpty(item.signPath)) {
-                File file = new File(item.signPath);
-                if (file.exists() && file.length() > 0) {
-                    startDcoment(item.signPath, item.documentId);
-                    return;
-                }
-            }
-            showLoading();
+//        if(item.sign){
+//            if(!TextUtils.isEmpty(item.signPath)) {
+//                File file = new File(item.signPath);
+//                if (file.exists() && file.length() > 0) {
+//                    startDcoment(item.signPath, item.documentId);
+//                    return;
+//                }
+//            }
+            showLoading("获取签名..");
             HttpApiImp.getSignedList(userId, item.documentId, new HttpApiImp.NetResponse<BaseEnty<SignInfo>>() {
                 @Override
                 public void onError(Throwable e) {
-                    Toast.makeText(getApplicationContext(), "文件下载失败，稍后重试", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "获取签名信息失败，稍后重试", Toast.LENGTH_LONG).show();
                     hideLoading();
                 }
 
                 @Override
                 public void onSuccess(final BaseEnty<SignInfo> model) {
-                    mRealm.executeTransaction(new Realm.Transaction() {
-                        @Override
-                        public void execute(Realm realm) {
-                            realm.copyToRealmOrUpdate(model.data);
-                        }
-                    });
+//                    mRealm.executeTransaction(new Realm.Transaction() {
+//                        @Override
+//                        public void execute(Realm realm) {
+//                            realm.copyToRealmOrUpdate(model.data);
+//                        }
+//                    });
                     hideLoading();
                     downPdf(item, model.data);
                 }
@@ -101,18 +101,18 @@ public class DocumentListActivty extends BaseActivity {
 
                 }
             });
-        }else
-            downPdf(item, null);
+//        }else
+//            downPdf(item, null);
     }
     private void downPdf(final DocumentInfo item, SignInfo signInfo) {
-        String localPath = item.sign || signInfo == null ? item.signPath : item.localPath;
+//        String localPath = item.sign || signInfo == null ? item.signPath : item.localPath;
         String urlPath = item.sign && signInfo != null ? signInfo.signaturePDFUrl : item.documentUrl;
         if(TextUtils.isEmpty(urlPath)){
             Toast.makeText(getApplicationContext(), "文件不存在", Toast.LENGTH_LONG).show();
             return;
         }
         final int documentId = item.documentId;
-        if (TextUtils.isEmpty(localPath)) {
+//        if (TextUtils.isEmpty(localPath)) {
             String name = urlPath;
             //通过Url得到保存到本地的文件名
             int index = name.lastIndexOf('/');//一定是找最后一个'/'出现的位置
@@ -123,7 +123,7 @@ public class DocumentListActivty extends BaseActivity {
                 name = path + name;
                 isCanOpen(name, urlPath, documentId, item);
             }
-        }
+//        }
 //
 //        else {
 //            startDcoment(localPath, documentId);
@@ -138,11 +138,12 @@ public class DocumentListActivty extends BaseActivity {
 //        } else
 
             {
-            showLoading();
+            showLoading("下载文件...");
             FileUtils.createFile(name);
             HttpApiImp.downloadPdf(urlPath, name, new HttpApiImp.NetResponse<String>() {
                 @Override
                 public void onError(Throwable e) {
+                    Toast.makeText(getApplicationContext(), "文件下载失败，稍后重试", Toast.LENGTH_LONG).show();
                     hideLoading();
                 }
 

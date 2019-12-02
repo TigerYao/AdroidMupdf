@@ -57,7 +57,7 @@ public class MuPDFCore {
 			pageNum = pageCount - 1;
 		else if (pageNum < 0)
 			pageNum = 0;
-		if (pageNum != currentPage) {
+		if (pageNum != currentPage || page == null) {
 			currentPage = pageNum;
 			if (page != null)
 				page.destroy();
@@ -92,8 +92,9 @@ public class MuPDFCore {
 	public synchronized void drawPage(Bitmap bm, int pageNum, int pageW,
 			int pageH, int patchX, int patchY, int patchW, int patchH, Cookie cookie) {
 		gotoPage(pageNum);
-
-		if (displayList == null)
+		if(page == null)
+			return;
+		if (displayList == null && page != null)
 			displayList = page.toDisplayList(false);
 
 		float zoom = resolution / 72;

@@ -7,13 +7,13 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PixelFormat;
-import android.graphics.PorterDuff;
-import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+
+import com.fantasy.androidmupdf.PenPoints;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -35,6 +35,7 @@ public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
     //笔轨迹、笔压力
     private ArrayList<Path> pen_paths = new ArrayList<>();
     private ArrayList<Float> pen_widths = new ArrayList<>();
+    private ArrayList<PenPoints> penPointsArrayList = new ArrayList<>();
     //线程控制
     private boolean drawing = false;
 
@@ -116,6 +117,11 @@ public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
         }
         upx = x;
         upy = y;
+        penPointsArrayList.add(new PenPoints(upx,upy, valupz));
+    }
+
+    public String getPenPointsArrayList() {
+        return new Gson().toJson(penPointsArrayList);
     }
 
     //按下事件

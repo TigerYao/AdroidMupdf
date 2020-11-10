@@ -82,6 +82,7 @@ public class MainActivity extends BaseActivity {
                  }
              }
          });
+         startService(new Intent(this, SocketService.class));
 //        if(userInfos != null && userInfos.size() > 0){
 //            Intent intent = new Intent(MainActivity.this, DocumentListActivty.class);
 //            intent.putExtra("userId", userInfos.get(0).userId);

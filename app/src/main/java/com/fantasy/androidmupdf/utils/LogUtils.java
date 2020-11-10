@@ -19,7 +19,7 @@ import java.util.Locale;
  */
 public class LogUtils {
     public static String TAG = "LogUtils";
-    private static final boolean LOGGABLE = BuildConfig.DEBUG;
+    private static final boolean LOGGABLE = true;//BuildConfig.DEBUG;
     private static final boolean isLogOnFile = false;
     public static final String APP_NAME = "Netschool";
     static StringBuffer mSb = new StringBuffer();

@@ -150,7 +150,7 @@ public class DocumentActivity extends BaseActivity {
             Intent intent = getIntent();
             byte buffer[] = null;
 
-            if (Intent.ACTION_VIEW.equals(intent.getAction())) {
+            if (Intent.ACTION_VIEW.equals(intent.getAction()) || "android.intent.action.openPdf".equals(intent.getAction())) {
                 Uri uri = intent.getData();
                 Logger.write(Logger.getTag(), "DocumentActivity URI to open is : " + uri);
                 if ("file".equals(uri.getScheme())) {

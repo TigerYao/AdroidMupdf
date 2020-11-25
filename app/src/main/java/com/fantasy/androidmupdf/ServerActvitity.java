@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 
+import com.google.gson.Gson;
 import com.yaohu.zhichuang.androidmupdf.R;
 
 import java.io.IOException;
@@ -24,6 +25,7 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -37,16 +39,29 @@ public class ServerActvitity extends AppCompatActivity {
     private final static int PORT = 3652;
 
     private ServerSocket mServerSocket = null;
+    private SignatureView signview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_server_actvitity);
         startServer(null);
+        signview = findViewById(R.id.signview);
     }
 
     public void dispToast(String text) {
         Toast.makeText(ServerActvitity.this, text, Toast.LENGTH_LONG).show();
+    }
+
+    public void onComplete(View view){
+        List<TimedPoint> points = signview.getSavedPointsCache();
+        Gson gson = new Gson();
+        String json = gson.toJson(points);
+        try {
+            processClientRequestThread.sendMessage(json);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 //    @Override
@@ -93,11 +108,14 @@ ProcessClientRequestThread processClientRequestThread;
         private Socket mSocket = null;
         InputStream in;
         public OutputStream out;
+        String msg = null;
 
         ProcessClientRequestThread(Socket socket) {
             mSocket = socket;
         }
-
+        public void sendMessage(String mg){
+            msg = mg;
+        }
         @Override
         public void run() {
             while (mRunning) {
@@ -111,9 +129,15 @@ ProcessClientRequestThread processClientRequestThread;
                     e.printStackTrace();
                     break;
                 }
+                try {
+                if(msg != null && out != null){
+                    out.write(msg.getBytes());
+                    out.flush();
+                    msg = null;
+                }
 
                 InputStreamReader reader = new InputStreamReader(in);
-                try {
+
                     char[] buf = new char[10240];
                     int cnt = reader.read(buf);
                     if (cnt > 0) {
